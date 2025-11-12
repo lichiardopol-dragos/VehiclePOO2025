@@ -49,7 +49,20 @@ abstract public class Vehicle {
 
     public Vehicle(Vehicle b)
     {
-        Vehicle(b.nrRoti, b.culoare, b.brand, b.anLansare, b.pret, b.tipCombustibil, b.putereMotor, b.tipCutieViteze, b.inaltime, b.capRezervor, b.vitMaxima, b.kmParcursi, b.nrLocuri);
+        this.nrRoti = b.nrRoti;
+        this.culoare = b.culoare;
+        this.brand = b.brand;
+        this.anLansare = b.anLansare;
+        this.pret = b.pret;
+        this.tipCombustibil = b.tipCombustibil;
+        this.putereMotor = b.putereMotor;
+        this.tipCutieViteze = b.tipCutieViteze;
+        this.inaltime = b.inaltime;
+        this.capRezervor = b.capRezervor;
+        this.vitMaxima = b.vitMaxima;
+        this.kmParcursi = b.kmParcursi;
+        this.nrLocuri = b.nrLocuri;
     }
+
 
 }
