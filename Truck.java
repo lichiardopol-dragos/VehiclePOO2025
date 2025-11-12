@@ -32,4 +32,23 @@ public class Truck extends Vehicle{
         "Tip caroserie: " + this.tipCaroserie + "\n\n";
     }
 
+    // GET
+
+    public int getCapPortbaj(){
+        return this.capPortbagaj;
+    }
+
+    public String getTipCaroserie(){
+        return this.tipCaroserie;
+    }
+
+// SET
+
+    public void setCapPortbaj(int capPortbagaj){
+        this.capPortbagaj = capPortbagaj;
+    }
+
+    public void setTipCaroserie(String tipCaroserie){
+        this.tipCaroserie = tipCaroserie;
+    }
 }
