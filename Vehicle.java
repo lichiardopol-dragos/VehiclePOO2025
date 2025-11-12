@@ -30,7 +30,7 @@ abstract public class Vehicle {
         this.nrLocuri = 0;
     }
     
-    public Vehicle(int nrRoti, String culoare, String brand, int anLansare, int pret, String combustibil, int putereMotor, String tipCutieViteze, int inaltime, int capRezervor, int vitMaxima, int kmParcursi, int nrLocuri)
+    public Vehicle(int nrRoti, String culoare, String brand, int anLansare, int pret, String tipCombustibil, int putereMotor, String tipCutieViteze, int inaltime, int capRezervor, int vitMaxima, int kmParcursi, int nrLocuri)
     {
         this.nrRoti = nrRoti;
         this.culoare = culoare;
