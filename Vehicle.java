@@ -81,4 +81,53 @@ abstract public class Vehicle {
         "Kilometri parcursi: " + this.kmParcursi + "\n" +
         "Nr locuri: " + this.nrLocuri + "\n";
     }
+
+    public int getNrRoti(){
+        return this.nrRoti;
+    }
+
+    public String getCuloare(){
+        return this.culoare;
+    }
+
+    public String getBrand(){
+        return this.brand;
+    }
+
+    public int getAnLansare(){
+        return this.anLansare;
+    }
+
+    public int getPret(){
+        return this.pret;
+    }
+
+    public String getTipCombustibil(){
+        return this.tipCombustibil;
+    }
+
+    public String getTipCutieViteze(){
+        return this.tipCutieViteze;
+    }
+
+    public int getInaltime(){
+        return this.inaltime;
+    }
+
+    public int getCapRezervor(){
+        return this.capRezervor;
+    }
+
+    public int getVitMaxima(){
+        return this.vitMaxima;
+    }
+
+    public int getKmParcursi(){
+        return this.kmParcursi;
+    }
+
+    public int getNrLocuri(){
+        return this.nrLocuri;
+    }
+
 }
