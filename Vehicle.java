@@ -82,6 +82,8 @@ abstract public class Vehicle {
         "Nr locuri: " + this.nrLocuri + "\n";
     }
 
+// GET
+
     public int getNrRoti(){
         return this.nrRoti;
     }
@@ -129,5 +131,60 @@ abstract public class Vehicle {
     public int getNrLocuri(){
         return this.nrLocuri;
     }
+
+// SET
+
+    public void setNrRoti(int roti){
+        this.nrRoti = roti;
+    }
+
+    public void setCuloare(String culoare){
+        this.culoare = culoare;
+    }
+
+    public void setBrand(String brand){
+        this.brand = brand;
+    }
+
+    public void setAnLansare(int anLansare){
+        this.anLansare = anLansare;
+    }
+
+    public void setPret(int pret){
+        this.pret = pret;
+    }
+
+    public void setTipCombustibil(String combustibil){
+        this.tipCombustibil = combustibil;
+    }
+
+    public void setPutereMotor(int putereMotor){
+        this.putereMotor = putereMotor;
+    }
+
+    public void setTipCutieViteze(String tipCutieViteze){
+        this.tipCutieViteze = tipCutieViteze;
+    }
+
+    public void setInaltime(int inaltime){
+        this.inaltime = inaltime;
+    }
+
+    public void setCapRezervor(int capRezervor){
+        this.capRezervor = capRezervor;
+    }
+
+    public void setVitMaxima(int vitMaxima){
+        this.vitMaxima = vitMaxima;
+    }
+
+    public void setKmParcursi(int kmParcursi){
+        this.kmParcursi = kmParcursi;
+    }
+    
+    public void setNrLocuri(int nrLocuri){
+        this.nrLocuri = nrLocuri;
+    }
+
 
 }
