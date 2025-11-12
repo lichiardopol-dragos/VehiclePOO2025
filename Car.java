@@ -50,5 +50,18 @@ public class Car extends Vehicle{
     public String getTipCaroserie(){
         return this.tipCaroserie;
     }
-    
+
+// SET
+
+    public void setAccel0100(int accel0100){
+        this.accel0100 = accel0100;
+    }
+
+    public void setCapPortbaj(int capPortbagaj){
+        this.capPortbagaj = capPortbagaj;
+    }
+
+    public void setTipCaroserie(String tipCaroserie){
+        this.tipCaroserie = tipCaroserie;
+    }
 }
