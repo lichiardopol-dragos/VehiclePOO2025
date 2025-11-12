@@ -64,7 +64,7 @@ public class Vehicle {
         this.nrLocuri = b.nrLocuri;
     }
 
-    @Override 
+    @Override
     public String toString()
     {
         return "Nr roti: " + this.nrRoti + "\n" +
@@ -73,13 +73,120 @@ public class Vehicle {
         "An lansare: " + this.anLansare + "\n" +
         "Pret: " + this.pret + "\n" + 
         "Tip combustibil: " + this.tipCombustibil + "\n" +
-        "Putere motor: " + this.putereMotor + "\n" + 
+        "Putere motor: " + this.putereMotor + "\n" +
+        "Pret: " + this.pret + "\n" +
+        "Tip combustibil: " + this.tipCombustibil + "\n" +
+        "Putere motor: " + this.putereMotor + "\n" +
         "Tip cutie viteze: " + this.tipCutieViteze + "\n" +
         "Inaltime: " + this.inaltime + "\n" +
         "Capacitate rezervor: " + this.capRezervor + "\n" +
         "Viteza maxima: " + this.vitMaxima + "\n" +
         "Kilometri parcursi: " + this.kmParcursi + "\n" +
-        "Nr locuri: " + this.nrLocuri + "\n\n";
+        "Nr locuri: " + this.nrLocuri + "\n";
+    }
+
+// GET
+
+    public int getNrRoti(){
+        return this.nrRoti;
+    }
+
+    public String getCuloare(){
+        return this.culoare;
+    }
+
+    public String getBrand(){
+        return this.brand;
+    }
+
+    public int getAnLansare(){
+        return this.anLansare;
+    }
+
+    public int getPret(){
+        return this.pret;
+    }
+
+    public String getTipCombustibil(){
+        return this.tipCombustibil;
+    }
+
+    public String getTipCutieViteze(){
+        return this.tipCutieViteze;
+    }
+
+    public int getInaltime(){
+        return this.inaltime;
+    }
+
+    public int getCapRezervor(){
+        return this.capRezervor;
+    }
+
+    public int getVitMaxima(){
+        return this.vitMaxima;
+    }
+
+    public int getKmParcursi(){
+        return this.kmParcursi;
+    }
+
+    public int getNrLocuri(){
+        return this.nrLocuri;
+    }
+
+// SET
+
+    public void setNrRoti(int roti){
+        this.nrRoti = roti;
+    }
+
+    public void setCuloare(String culoare){
+        this.culoare = culoare;
+    }
+
+    public void setBrand(String brand){
+        this.brand = brand;
+    }
+
+    public void setAnLansare(int anLansare){
+        this.anLansare = anLansare;
+    }
+
+    public void setPret(int pret){
+        this.pret = pret;
+    }
+
+    public void setTipCombustibil(String combustibil){
+        this.tipCombustibil = combustibil;
+    }
+
+    public void setPutereMotor(int putereMotor){
+        this.putereMotor = putereMotor;
+    }
+
+    public void setTipCutieViteze(String tipCutieViteze){
+        this.tipCutieViteze = tipCutieViteze;
+    }
+
+    public void setInaltime(int inaltime){
+        this.inaltime = inaltime;
+    }
+
+    public void setCapRezervor(int capRezervor){
+        this.capRezervor = capRezervor;
+    }
+
+    public void setVitMaxima(int vitMaxima){
+        this.vitMaxima = vitMaxima;
+    }
+
+    public void setKmParcursi(int kmParcursi){
+        this.kmParcursi = kmParcursi;
+    }
+    
+    public void setNrLocuri(int nrLocuri){
+        this.nrLocuri = nrLocuri;
     }
 
 }
