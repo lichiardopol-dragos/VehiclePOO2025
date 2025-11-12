@@ -37,5 +37,18 @@ public class Car extends Vehicle{
         "Capacitate portbagaj: " + this.capPortbagaj + "\n" +
         "Tip caroserie: " + this.tipCaroserie + "\n\n";
     }
+// GET
 
+    public int getAccel0100(){
+        return this.accel0100;
+    }
+
+    public int getCapPortbaj(){
+        return this.capPortbagaj;
+    }
+
+    public String getTipCaroserie(){
+        return this.tipCaroserie;
+    }
+    
 }
