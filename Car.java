@@ -29,4 +29,13 @@ public class Car extends Vehicle{
         this.tipCaroserie = b.tipCaroserie;
     }
 
+    @Override
+    public String toString()
+    {
+        return super.toString() + "\n" +
+        "Acceleratie 0-100: " + this.accel0100 + "\n" +
+        "Capacitate portbagaj: " + this.capPortbagaj + "\n" +
+        "Tip caroserie: " + this.tipCaroserie + "\n\n";
+    }
+
 }

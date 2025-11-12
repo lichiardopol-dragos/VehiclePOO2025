@@ -79,6 +79,6 @@ abstract public class Vehicle {
         "Capacitate rezervor: " + this.capRezervor + "\n" +
         "Viteza maxima: " + this.vitMaxima + "\n" +
         "Kilometri parcursi: " + this.kmParcursi + "\n" +
-        "Nr locuri: " + this.nrLocuri + "\n\n";
+        "Nr locuri: " + this.nrLocuri + "\n";
     }
 }
