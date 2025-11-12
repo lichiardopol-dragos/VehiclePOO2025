@@ -29,5 +29,22 @@ abstract public class Vehicle {
         this.kmParcursi = 0;
         this.nrLocuri = 0;
     }
+    
+    public Vehicle(int nrRoti, String culoare, String brand, int anLansare, int pret, String combustibil, int putereMotor, String tipCutieViteze, int inaltime, int capRezervor, int vitMaxima, int kmParcursi, int nrLocuri)
+    {
+        this.nrRoti = nrRoti;
+        this.culoare = culoare;
+        this.brand = brand;
+        this.anLansare = anLansare;
+        this.pret = pret;
+        this.tipCombustibil = tipCombustibil;
+        this.putereMotor = putereMotor;
+        this.tipCutieViteze = tipCutieViteze;
+        this.inaltime = inaltime;
+        this.capRezervor = capRezervor;
+        this.vitMaxima = vitMaxima;
+        this.kmParcursi = kmParcursi;
+        this.nrLocuri = nrLocuri;
+    }
 
 }
