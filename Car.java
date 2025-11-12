@@ -20,4 +20,13 @@ public class Car extends Vehicle{
         this.capPortbagaj = capPortbagaj;
         this.tipCaroserie = tipCaroserie;
     }
+
+    public Car(Car b)
+    {
+        super(b);
+        this.accel0100 = b.accel0100;
+        this.capPortbagaj = b.capPortbagaj;
+        this.tipCaroserie = b.tipCaroserie;
+    }
+
 }
