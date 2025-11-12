@@ -47,4 +47,9 @@ abstract public class Vehicle {
         this.nrLocuri = nrLocuri;
     }
 
+    public Vehicle(Vehicle b)
+    {
+        Vehicle(b.nrRoti, b.culoare, b.brand, b.anLansare, b.pret, b.tipCombustibil, b.putereMotor, b.tipCutieViteze, b.inaltime, b.capRezervor, b.vitMaxima, b.kmParcursi, b.nrLocuri);
+    }
+
 }
