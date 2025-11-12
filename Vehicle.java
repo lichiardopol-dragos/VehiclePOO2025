@@ -64,5 +64,21 @@ abstract public class Vehicle {
         this.nrLocuri = b.nrLocuri;
     }
 
-
+    @Override
+    public String toString()
+    {
+        return "Nr roti: " + this.nrRoti + "\n" +
+        "Culoare: " + this.culoare + "\n" +
+        "Brand: " + this.brand + "\n" +
+        "An lansare: " + this.anLansare + "\n" +
+        "Pret: " + this.pret + "\n" +
+        "Tip combustibil: " + this.tipCombustibil + "\n" +
+        "Putere motor: " + this.putereMotor + "\n" +
+        "Tip cutie viteze: " + this.tipCutieViteze + "\n" +
+        "Inaltime: " + this.inaltime + "\n" +
+        "Capacitate rezervor: " + this.capRezervor + "\n" +
+        "Viteza maxima: " + this.vitMaxima + "\n" +
+        "Kilometri parcursi: " + this.kmParcursi + "\n" +
+        "Nr locuri: " + this.nrLocuri + "\n\n";
+    }
 }
