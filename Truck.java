@@ -17,6 +17,11 @@ public class Truck extends Vehicle{
         this.tipCaroserie = tipCaroserie;
     }
 
+    public Truck(Truck b)
+    {
+        super(b);
+        this.capPortbagaj = b.capPortbagaj;
+        this.tipCaroserie = b.tipCaroserie;
+    }
 
-    
 }
