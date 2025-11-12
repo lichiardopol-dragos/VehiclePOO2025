@@ -24,4 +24,12 @@ public class Truck extends Vehicle{
         this.tipCaroserie = b.tipCaroserie;
     }
 
+    @Override
+    public String toString()
+    {
+        return super.toString() + "\n" +
+        "Capacitate portbagaj: " + this.capPortbagaj + "\n" +
+        "Tip caroserie: " + this.tipCaroserie + "\n\n";
+    }
+
 }
