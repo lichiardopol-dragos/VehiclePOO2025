@@ -197,8 +197,8 @@ public class Vehicle implements VanzareVehicule{
 
 public boolean esteSH(Vehicle a){
     if(
-        (2025-a.getAnLansare())>=10 &
-        a.getKmParcursi() >= 100000 &
+        ((2025-a.getAnLansare())>=10) &&
+        a.getKmParcursi() >= 100000)
     )
         return true;
     else return false;
