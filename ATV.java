@@ -1,4 +1,4 @@
-public class ATV extends Vehicle{
+public class ATV extends Vehicle implements VanzareVehicule{
 
     private boolean isVinci;
 

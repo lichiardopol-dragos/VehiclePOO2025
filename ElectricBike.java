@@ -1,4 +1,4 @@
-public class ElectricBike extends Vehicle{
+public class ElectricBike extends Vehicle implements VanzareVehicule{
     
     private int accel0100;
 
