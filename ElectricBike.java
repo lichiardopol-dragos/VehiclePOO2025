@@ -31,4 +31,7 @@ public class ElectricBike extends Vehicle implements VanzareVehicule{
     public void setAccel0100(int accel0100){
         this.accel0100=accel0100;
     }
+
+
+
 }

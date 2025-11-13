@@ -32,4 +32,6 @@ public class ATV extends Vehicle implements VanzareVehicule{
         this.isVinci=isVinci;
     }
     
+
+
 }
