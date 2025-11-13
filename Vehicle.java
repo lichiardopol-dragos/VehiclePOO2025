@@ -1,4 +1,4 @@
-public class Vehicle {
+public class Vehicle implements VanzareVehicule{
     private int nrRoti;
     private String culoare;
     private String brand;
@@ -111,6 +111,10 @@ public class Vehicle {
         return this.tipCombustibil;
     }
 
+    public int getPutereMotor(){
+        return this.putereMotor;
+    }
+
     public String getTipCutieViteze(){
         return this.tipCutieViteze;
     }
@@ -188,5 +192,20 @@ public class Vehicle {
     public void setNrLocuri(int nrLocuri){
         this.nrLocuri = nrLocuri;
     }
+
+// INTERFATA VANZARE VEHICULE
+
+public boolean esteSH(Vehicle a){
+    if(
+        (2025-a.getAnLansare())>=10 &
+        a.getKmParcursi() >= 100000 &
+    )
+        return true;
+    else return false;
+}
+
+public int calcPretVanzare(Vehicle a){
+    return (2025-a.getAnLansare()) * 10000 + a.getPutereMotor() * 1000 + a.getCapRezervor() * 500 + a.getKmParcursi() / 10000;
+}
 
 }

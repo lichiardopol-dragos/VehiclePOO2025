@@ -1,5 +1,4 @@
 public interface VanzareVehicule {
-    boolean esteSH();
-
+    boolean esteSH()
     int calcPretVanzare();
 }
