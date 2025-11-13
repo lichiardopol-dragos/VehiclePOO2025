@@ -16,5 +16,20 @@ public class ATV extends Vehicle{
         super(b);
         this.isVinci=b.isVinci;
     }
+
+    @Override
+    public String toString()
+    {
+        return super.toString() + "\n" +
+        "Are vinci: " + this.isVinci + "\n\n";
+    }
+
+    public boolean getIsVinci(){
+        return this.isVinci;
+    }
+
+    public void setIsVinci(boolean isVinci){
+        this.isVinci=isVinci;
+    }
     
 }
