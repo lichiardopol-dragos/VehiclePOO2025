@@ -1,4 +1,4 @@
-public class Scooter extends Vehicle {
+public class Scooter extends Vehicle implements VanzareVehicule{
 
     //atribute private
     private boolean hasStorageUnderSeat;
@@ -10,10 +10,6 @@ public class Scooter extends Vehicle {
         this.hasStorageUnderSeat = true;
         this.dimensiuneRoata = 12;
     }
-
-
-    //LOC PT OVERRIDE METODE
-
 
 
     //constructor cu toti parametrii
@@ -37,7 +33,12 @@ public Scooter(int nrRoti, String culoare, String brand, int anLansare, int pret
 
 //metoda toString
 
-
+@Override
+public String toString() {
+        return super.toString() +
+                "has storage under seat: "+hasStorageUnderSeat+
+                "\ndimensiune roata: "+dimensiuneRoata;
+}
     //gettere si settere pentru cele doua atribute private
     public boolean isHasStorageUnderSeat(){
         return hasStorageUnderSeat;
