@@ -1,4 +1,4 @@
-public class Scooter extends Vehicle implements VanzareVehicule{
+public class Scooter extends Vehicle{
 
     //atribute private
     private boolean hasStorageUnderSeat;
@@ -52,4 +52,5 @@ public String toString() {
     public void setDimensiuneRoata(int dimensiuneRoata){
         this.dimensiuneRoata = dimensiuneRoata;
     }
-               }
+
+}

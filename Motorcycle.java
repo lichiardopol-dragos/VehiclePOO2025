@@ -1,4 +1,4 @@
-public class Motorcycle extends Vehicle implements VanzareVehicule{
+public class Motorcycle extends Vehicle{
     //atribute private
     private String tipTransmisie;
     private String tipFrana;
@@ -51,4 +51,6 @@ public String toString(){
     public void setTipFrana(String tipFrana) {
         this.tipFrana = tipFrana;
     }
+
+
 }
