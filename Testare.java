@@ -1,6 +1,7 @@
+import java.util.*;
+
 public class Testare {
     public static void main(String[] args) {
-        System.out.println("--- Programul a pornit! ---");
 
         // cream un obiect tip Motorcycle
         Motorcycle m1 = new Motorcycle(
@@ -23,6 +24,33 @@ public class Testare {
         //testam un getter din Vehicle si unul din Motorcycle
         System.out.println("\n\tTestare Gettere");
         System.out.println("Brand:"+m1.getBrand());
-        System.out.println("Tip frana: "+m1.getTipFrana());
+        System.out.println("Tip frana: "+m1.getTipFrana()+"\n");
+        //definire ArrayList
+        ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>(10);
+        vehicles.add(m1);
+
+        //testare metoda 1
+        System.out.println("\tFiltru de cautare interval de pret si an vechime");
+       System.out.println(PretBunPentruAn(vehicles));
+    }
+    //Metode pt ArrayList
+    //1. metoda de gasire vehicule
+    public static String PretBunPentruAn(ArrayList<Vehicle> vehicles){
+        String afisare="";
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Anul minim cerut: ");
+        int anMinim=scanner.nextInt();
+        System.out.print("Pretul maxim cerut: ");
+        int pretMaxim=scanner.nextInt();
+
+        for(int i=0;i<vehicles.size();i++) {
+            int an = vehicles.get(i).getAnLansare();
+            int pret = vehicles.get(i).getPret();
+            if (an >= anMinim && pret <= pretMaxim)
+                afisare += vehicles.get(i)+" ";
+        }
+        if(afisare.isEmpty())
+            return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
+        else return afisare;
     }
 }
