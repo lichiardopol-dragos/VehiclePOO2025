@@ -1,4 +1,4 @@
-public class Motorcycle extends Vehicle {
+public class Motorcycle extends Vehicle{
     //atribute private
     private String tipTransmisie;
     private String tipFrana;
@@ -9,11 +9,6 @@ public class Motorcycle extends Vehicle {
         this.tipTransmisie = "Lant";
         this.tipFrana = "Standard";
     }
-
-
-
-    //LOC PT OVERRIDE METODE
-
 
 
     //constructor cu toti parametrii
@@ -36,7 +31,12 @@ public class Motorcycle extends Vehicle {
         this.tipFrana = b.tipFrana;
     }
     //metoda toString
-
+@Override
+public String toString(){
+        return super.toString() +
+                "tip transmisie: "+ tipTransmisie+
+                "\ntip frana: "+tipFrana;
+}
 
     //gettere si settere pentru cele 2 atribute private
     public String getTipTransmisie() {
@@ -51,4 +51,6 @@ public class Motorcycle extends Vehicle {
     public void setTipFrana(String tipFrana) {
         this.tipFrana = tipFrana;
     }
+
+
 }
