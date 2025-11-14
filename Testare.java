@@ -18,13 +18,14 @@ public class Testare {
         boolean esteSecondHand=m1.esteSH();
         System.out.println("Este Second Hand? "+esteSecondHand);
 
-        int pretVanzare=m1.calcPretVanzare();
-        System.out.println("Pret vanzare: "+pretVanzare);
+        int ImpozitAnual=m1.calcImpozitAnual();
+        System.out.println("Impozit Anual: "+ImpozitAnual);
 
         //testam un getter din Vehicle si unul din Motorcycle
         System.out.println("\n\tTestare Gettere");
         System.out.println("Brand:"+m1.getBrand());
         System.out.println("Tip frana: "+m1.getTipFrana()+"\n");
+
         //definire ArrayList
         ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>(10);
         vehicles.add(m1);
@@ -32,9 +33,13 @@ public class Testare {
         //testare metoda 1
         System.out.println("\tFiltru de cautare interval de pret si an vechime");
        System.out.println(PretBunPentruAn(vehicles));
+
+       //testare metoda 2
+        System.out.println("\tFiltru de cautare dupa brand si cutie de viteze");
+        System.out.println(CautareDupaBrandSiCutieViteze(vehicles));
     }
     //Metode pt ArrayList
-    //1. metoda de gasire vehicule
+    //1. metoda de gasire vehicule dupa pret si an
     public static String PretBunPentruAn(ArrayList<Vehicle> vehicles){
         String afisare="";
         Scanner scanner=new Scanner(System.in);
@@ -48,6 +53,26 @@ public class Testare {
             int pret = vehicles.get(i).getPret();
             if (an >= anMinim && pret <= pretMaxim)
                 afisare += vehicles.get(i)+" ";
+        }
+        if(afisare.isEmpty())
+            return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
+        else return afisare;
+    }
+
+    //2. metoda de gasire vehicule dupa brand si tip cutie viteze
+    public static String CautareDupaBrandSiCutieViteze(ArrayList<Vehicle> vehicles){
+        String afisare="";
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Brand: ");
+        String brand=scanner.next();
+        System.out.print("Cutie de viteze: ");
+        String cutieViteze=scanner.next();
+
+        for(int i=0;i<vehicles.size();i++) {
+            String thisBrand=vehicles.get(i).getBrand();
+            String thisCutieViteze=vehicles.get(i).getTipCutieViteze();
+            if(thisBrand.equals(brand) && thisCutieViteze.equals(cutieViteze))
+                afisare+=vehicles.get(i)+" ";
         }
         if(afisare.isEmpty())
             return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";

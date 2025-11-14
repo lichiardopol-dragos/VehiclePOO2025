@@ -201,11 +201,16 @@ public boolean esteSH(){
     else return false;
 }
 
-//EROARE DE LOGICA - daca anul este mai mare si km parcuri mai multi -> pret mai mare
-    //Inlocuire - luam this.pret si scadem an lansare * x si km parcuri * y
 @Override
-public int calcPretVanzare(){
-    return (2025-this.getAnLansare()) * 10000 + this.getPutereMotor() * 1000 + this.getCapRezervor() * 500 + this.getKmParcursi() / 10000;
+public int calcImpozitAnual(){
+        //incepem cu taxa de 50 EURO
+        int impozit=50;
+        impozit+=this.getPutereMotor();
+        if(this.esteSH()==true){
+            impozit+=100;
+        }
+        return impozit;
+
 }
 
 }
