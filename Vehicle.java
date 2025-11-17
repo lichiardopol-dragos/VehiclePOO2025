@@ -67,19 +67,19 @@ public abstract class Vehicle implements VanzareVehicule{
     @Override
     public String toString()
     {
-        return "Nr roti: " + this.nrRoti + "\n" +
-        "Culoare: " + this.culoare + "\n" +
-        "Brand: " + this.brand + "\n" +
-        "An lansare: " + this.anLansare + "\n" +
-        "Pret: " + this.pret + "\n" + 
-        "Tip combustibil: " + this.tipCombustibil + "\n" +
-        "Putere motor: " + this.putereMotor + "\n" +
-        "Tip cutie viteze: " + this.tipCutieViteze + "\n" +
-        "Inaltime: " + this.inaltime + "\n" +
-        "Capacitate rezervor: " + this.capRezervor + "\n" +
-        "Viteza maxima: " + this.vitMaxima + "\n" +
-        "Kilometri parcursi: " + this.kmParcursi + "\n" +
-        "Nr locuri: " + this.nrLocuri + "\n";
+        return "Brand: " + this.brand + "\n" +
+                "Culoare: " + this.culoare + "\n" +
+                "An lansare: " + this.anLansare + "\n" +
+                "Pret: " + this.pret + "\n" +
+                "Kilometri parcursi: " + this.kmParcursi + "\n" +
+                "Putere motor: " + this.putereMotor + " CP\n" +
+                "Viteza maxima: " + this.vitMaxima + " km/h\n" +
+                "Tip combustibil: " + this.tipCombustibil + "\n" +
+                "Capacitate rezervor: " + this.capRezervor + " L\n" +
+                "Tip cutie viteze: " + this.tipCutieViteze + "\n" +
+                "Nr roti: " + this.nrRoti + "\n" +
+                "Nr locuri: " + this.nrLocuri + "\n" +
+                "Inaltime: " + this.inaltime + " cm\n";
     }
 
 // GET
@@ -201,11 +201,16 @@ public boolean esteSH(){
     else return false;
 }
 
-//EROARE DE LOGICA - daca anul este mai mare si km parcuri mai multi -> pret mai mare
-    //Inlocuire - luam this.pret si scadem an lansare * x si km parcuri * y
 @Override
-public int calcPretVanzare(){
-    return (2025-this.getAnLansare()) * 10000 + this.getPutereMotor() * 1000 + this.getCapRezervor() * 500 + this.getKmParcursi() / 10000;
+public int calcImpozitAnual(){
+        //incepem cu taxa de 50 EURO
+        int impozit=50;
+        impozit+=this.getPutereMotor();
+        if(this.esteSH()==true){
+            impozit+=100;
+        }
+        return impozit;
+
 }
 
 }
