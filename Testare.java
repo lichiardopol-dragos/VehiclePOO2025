@@ -47,6 +47,7 @@ public class Testare {
         int anMinim=scanner.nextInt();
         System.out.print("Pretul maxim cerut: ");
         int pretMaxim=scanner.nextInt();
+        scanner.close();
 
         for(int i=0;i<vehicles.size();i++) {
             int an = vehicles.get(i).getAnLansare();
@@ -67,6 +68,7 @@ public class Testare {
         String brand=scanner.next();
         System.out.print("Cutie de viteze: ");
         String cutieViteze=scanner.next();
+        scanner.close();
 
         for(int i=0;i<vehicles.size();i++) {
             String thisBrand=vehicles.get(i).getBrand();
@@ -74,6 +76,7 @@ public class Testare {
             if(thisBrand.equals(brand) && thisCutieViteze.equals(cutieViteze))
                 afisare+=vehicles.get(i)+" ";
         }
+        
         if(afisare.isEmpty())
             return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
         else return afisare;
