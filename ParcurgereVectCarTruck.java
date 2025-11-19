@@ -103,7 +103,19 @@ public class ParcurgereVectCarTruck {
          180, 0, 1, 600, 
          "Inchis");
 
-        //definire ArrayList
+        System.out.println("\n\tTestare met toString()");
+        System.out.println(c1.toString());
+
+        System.out.println("\n\tTestare met interfata");
+        System.out.println("Este c1 Second Hand?: " + c1.esteSH());
+        System.out.println("Impozitul anual pentru c1: " + c1.calcImpozitAnual());
+
+        System.out.println("\n\tTestare Gettere si Settere");
+        System.out.println("Brand c1: " + c1.getBrand());
+        System.out.println("Aceeleratie 0-100 c1: " + c1.getAccel0100());
+        c1.setCuloare("Kakki");
+        System.out.println("Culoarea c1 a fost schimbata in: " + c1.getCuloare());
+
         ArrayList<Vehicle> carNtruck = new ArrayList<Vehicle>(20);
         carNtruck.add(c1);
         carNtruck.add(c2);
@@ -128,6 +140,12 @@ public class ParcurgereVectCarTruck {
         carNtruck.add(t10);
 
         MetArrayList.parcurgereVector(carNtruck, "Cars din vector:", "Trucks din vector:");
+
+        System.out.println("\tFiltru de cautare interval de pret si an vechime");
+        System.out.println(MetArrayList.PretBunPentruAn(carNtruck));
+
+        System.out.println("\tFiltru de cautare dupa brand si cutie de viteze");
+        System.out.println(MetArrayList.CautareDupaBrandSiCutieViteze(carNtruck));
 
     }
 }
