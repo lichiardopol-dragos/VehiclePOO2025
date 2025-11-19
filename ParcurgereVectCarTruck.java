@@ -104,7 +104,36 @@ public class ParcurgereVectCarTruck {
          "Inchis");
 
         //definire ArrayList
-        ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>(10);
+        ArrayList<Vehicle> carNtruck = new ArrayList<Vehicle>(20);
+        carNtruck.add(c1);
+        carNtruck.add(c2);
+        carNtruck.add(c3);
+        carNtruck.add(c4);
+        carNtruck.add(c5);
+        carNtruck.add(c6);
+        carNtruck.add(c7);
+        carNtruck.add(c8);
+        carNtruck.add(c9);
+        carNtruck.add(c10);
+
+        carNtruck.add(t1);
+        carNtruck.add(t2);
+        carNtruck.add(t3);
+        carNtruck.add(t4);
+        carNtruck.add(t5);
+        carNtruck.add(t6);
+        carNtruck.add(t7);
+        carNtruck.add(t8);
+        carNtruck.add(t9);
+        carNtruck.add(t10);
+
+        for(int i=0; i<carNtruck.size(); i++){
+                System.out.println("Cars din vector: \n\n\n");
+                if (i==(carNtruck.size())/2)
+                        System.out.println("\n\n Trucks din vector: \n\n");
+                System.out.println((carNtruck.get(i)).toString()+"\n");
+                
+        }
 
     }
 }
