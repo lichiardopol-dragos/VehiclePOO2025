@@ -1,28 +1,28 @@
-public class Vehicle implements VanzareVehicule{
-    private int nrRoti;
-    private String culoare;
-    private String brand;
-    private int anLansare;
-    private int pret;
-    private String tipCombustibil;
-    private int putereMotor;
-    private String tipCutieViteze;
-    private int inaltime;
-    private int capRezervor;
-    private int vitMaxima;
-    private int kmParcursi;
-    private int nrLocuri;
+public abstract class Vehicle implements VanzareVehicule{
+    protected int nrRoti;
+    protected String culoare;
+    protected String brand;
+    protected int anLansare;
+    protected int pret;
+    protected String tipCombustibil;
+    protected int putereMotor;
+    protected String tipCutieViteze;
+    protected int inaltime;
+    protected int capRezervor;
+    protected int vitMaxima;
+    protected int kmParcursi;
+    protected int nrLocuri;
 
     public Vehicle()
     {
         this.nrRoti = 0;
-        this.culoare = "Rosu";
-        this.brand = "Toyota";
+        this.culoare = "Unknown";
+        this.brand = "Unknown";
         this.anLansare = 2009;
         this.pret = 0;
-        this.tipCombustibil = "Benzina";
+        this.tipCombustibil = "Unknown";
         this.putereMotor = 0;
-        this.tipCutieViteze = "Manuala";
+        this.tipCutieViteze = "Unknown";
         this.inaltime = 0;
         this.capRezervor = 0;
         this.vitMaxima = 0;
@@ -72,9 +72,6 @@ public class Vehicle implements VanzareVehicule{
         "Brand: " + this.brand + "\n" +
         "An lansare: " + this.anLansare + "\n" +
         "Pret: " + this.pret + "\n" + 
-        "Tip combustibil: " + this.tipCombustibil + "\n" +
-        "Putere motor: " + this.putereMotor + "\n" +
-        "Pret: " + this.pret + "\n" +
         "Tip combustibil: " + this.tipCombustibil + "\n" +
         "Putere motor: " + this.putereMotor + "\n" +
         "Tip cutie viteze: " + this.tipCutieViteze + "\n" +
@@ -194,18 +191,21 @@ public class Vehicle implements VanzareVehicule{
     }
 
 // INTERFATA VANZARE VEHICULE
-
-public boolean esteSH(Vehicle a){
+@Override
+public boolean esteSH(){
     if(
-        ((2025-a.getAnLansare())>=10) &&
-        (a.getKmParcursi() >= 100000)
+        (2025-a.getAnLansare())>=10 &
+        a.getKmParcursi() >= 100000 &
     )
         return true;
     else return false;
 }
 
-public int calcPretVanzare(Vehicle a){
-    return (2025-a.getAnLansare()) * 10000 + a.getPutereMotor() * 1000 + a.getCapRezervor() * 500 + a.getKmParcursi() / 10000;
+//EROARE DE LOGICA - daca anul este mai mare si km parcuri mai multi -> pret mai mare
+    //Inlocuire - luam this.pret si scadem an lansare * x si km parcuri * y
+@Override
+public int calcPretVanzare(){
+    return (2025-this.getAnLansare()) * 10000 + this.getPutereMotor() * 1000 + this.getCapRezervor() * 500 + this.getKmParcursi() / 10000;
 }
 
 }
