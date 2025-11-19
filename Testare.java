@@ -1,5 +1,8 @@
 import java.util.*;
 
+import Clase.Motorcycle;
+import Clase.Vehicle;
+
 public class Testare {
     public static void main(String[] args) {
 

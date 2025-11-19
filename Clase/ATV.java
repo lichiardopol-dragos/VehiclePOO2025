@@ -1,3 +1,4 @@
+package Clase;
 public class ATV extends Vehicle{
 
     private boolean isVinci;

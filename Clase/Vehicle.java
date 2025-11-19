@@ -1,3 +1,7 @@
+package Clase;
+
+import Clase_ajutatoare_metode.VanzareVehicule;
+
 public abstract class Vehicle implements VanzareVehicule{
     protected int nrRoti;
     protected String culoare;

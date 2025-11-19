@@ -1,5 +1,9 @@
+package Clase_ajutatoare_metode;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+import Clase.Vehicle;
+
 
 public class MetArrayList {
     public static void parcurgereVector(ArrayList<Vehicle> v, String part1, String part2)

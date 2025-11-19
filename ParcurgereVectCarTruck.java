@@ -1,5 +1,10 @@
 import java.util.*;
 
+import Clase.Car;
+import Clase.Truck;
+import Clase.Vehicle;
+import Clase_ajutatoare_metode.MetArrayList;
+
 public class ParcurgereVectCarTruck {
     public static void main(String[] args) {
 
