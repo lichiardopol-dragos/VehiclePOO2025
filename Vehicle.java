@@ -203,13 +203,13 @@ public boolean esteSH(){
 
 @Override
 public int calcImpozitAnual(){
-        //incepem cu taxa de 50 EURO
-        int impozit=50;
-        impozit+=this.getPutereMotor();
-        if(this.esteSH()==true){
-            impozit+=100;
-        }
-        return impozit;
+    //incepem cu taxa de 50 EURO
+    int impozit=50;
+    impozit+=this.getPutereMotor();
+    if(this.esteSH()==true){
+        impozit+=100;
+    }
+    return impozit;
 
 }
 
