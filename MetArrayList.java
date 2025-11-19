@@ -12,6 +12,29 @@ public class MetArrayList {
         }
     }
 
+    public static String PretBunPentruAn(ArrayList<Vehicle> v){
+        String afisare="";
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Anul minim cerut: ");
+        int anMinim=scanner.nextInt();
+        System.out.print("Pretul maxim cerut: ");
+        int pretMaxim=scanner.nextInt();
+        
+
+        for(int i=0;i<v.size();i++) {
+            int an = v.get(i).getAnLansare();
+            int pret = v.get(i).getPret();
+            if (an >= anMinim && pret <= pretMaxim)
+                afisare += v.get(i)+" ";
+        }
+        
+        scanner.close();
+
+        if(afisare.isEmpty())
+            return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
+        else return afisare;
+    }
+
     public static String CautareDupaBrandSiCutieViteze(ArrayList<Vehicle> v){
         String afisare="";
         Scanner scanner=new Scanner(System.in);
@@ -34,4 +57,6 @@ public class MetArrayList {
             return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
         else return afisare;
     }
+
+
 }

@@ -38,31 +38,5 @@ public class Testare {
         System.out.println("\tFiltru de cautare dupa brand si cutie de viteze");
         System.out.println(CautareDupaBrandSiCutieViteze(vehicles));
     }
-    //Metode pt ArrayList
-    //1. metoda de gasire vehicule dupa pret si an
-    public static String PretBunPentruAn(ArrayList<Vehicle> vehicles){
-        String afisare="";
-        Scanner scanner=new Scanner(System.in);
-        System.out.print("Anul minim cerut: ");
-        int anMinim=scanner.nextInt();
-        System.out.print("Pretul maxim cerut: ");
-        int pretMaxim=scanner.nextInt();
-        
-
-        for(int i=0;i<vehicles.size();i++) {
-            int an = vehicles.get(i).getAnLansare();
-            int pret = vehicles.get(i).getPret();
-            if (an >= anMinim && pret <= pretMaxim)
-                afisare += vehicles.get(i)+" ";
-        }
-        
-        scanner.close();
-
-        if(afisare.isEmpty())
-            return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
-        else return afisare;
-    }
-
-    //2. metoda de gasire vehicule dupa brand si tip cutie viteze
     
 }
