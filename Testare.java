@@ -64,26 +64,5 @@ public class Testare {
     }
 
     //2. metoda de gasire vehicule dupa brand si tip cutie viteze
-    public static String CautareDupaBrandSiCutieViteze(ArrayList<Vehicle> vehicles){
-        String afisare="";
-        Scanner scanner=new Scanner(System.in);
-        System.out.print("Brand: ");
-        String brand=scanner.next();
-        System.out.print("Cutie de viteze: ");
-        String cutieViteze=scanner.next();
-        
-
-        for(int i=0;i<vehicles.size();i++) {
-            String thisBrand=vehicles.get(i).getBrand();
-            String thisCutieViteze=vehicles.get(i).getTipCutieViteze();
-            if(thisBrand.equals(brand) && thisCutieViteze.equals(cutieViteze))
-                afisare+=vehicles.get(i)+" ";
-        }
-
-        scanner.close();
-        
-        if(afisare.isEmpty())
-            return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
-        else return afisare;
-    }
+    
 }

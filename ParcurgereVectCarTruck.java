@@ -127,13 +127,7 @@ public class ParcurgereVectCarTruck {
         carNtruck.add(t9);
         carNtruck.add(t10);
 
-        for(int i=0; i<carNtruck.size(); i++){
-                System.out.println("Cars din vector: \n\n\n");
-                if (i==(carNtruck.size())/2)
-                        System.out.println("\n\n Trucks din vector: \n\n");
-                System.out.println((carNtruck.get(i)).toString()+"\n");
-                
-        }
+        MetArrayList.parcurgereVector(carNtruck, "Cars din vector:", "Trucks din vector:");
 
     }
 }
