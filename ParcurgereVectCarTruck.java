@@ -58,8 +58,6 @@ public class ParcurgereVectCarTruck {
         120, 12037, 4,
         9, 15, "Bicorp");
 
-        // continua de la tipCutieViteze
-
         Truck t1 = new Truck(6, "Gri", "DAF", 2006, 30000, "Benzina",
          50, "Manuala", 100, 50, 
          180, 0, 1, 600, 
