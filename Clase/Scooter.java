@@ -1,4 +1,5 @@
-public class Scooter extends Vehicle {
+package Clase;
+public class Scooter extends Vehicle{
 
     //atribute private
     private boolean hasStorageUnderSeat;

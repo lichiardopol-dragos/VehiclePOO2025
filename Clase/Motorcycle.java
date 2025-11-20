@@ -1,4 +1,5 @@
-public class Motorcycle extends Vehicle {
+package Clase;
+public class Motorcycle extends Vehicle{
     //atribute private
     private String tipTransmisie;
     private String tipFrana;
