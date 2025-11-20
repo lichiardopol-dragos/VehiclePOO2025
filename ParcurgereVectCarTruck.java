@@ -29,7 +29,7 @@ public class ParcurgereVectCarTruck {
         9, 15, "Hitchback");
 
         Car c5 = new Car(4, "Turcoaz", "Tesla", 2018, 50000, "Electrica",
-        195, "Manuala", 107, 33, 
+        195, "Automata", 107, 33, 
         162, 90102, 2,
         10, 14, "Hitchback");
 
@@ -66,49 +66,49 @@ public class ParcurgereVectCarTruck {
          "Inchis");
 
         Truck t2 = new Truck(4, "Negru", "DAF", 2021, 34311, "Benzina",
-         93, "Manuala", 100, 50, 
-         180, 0, 1, 600, 
+         93, "Manuala", 116, 84, 
+         176, 39067, 1, 555, 
          "Inchis");
 
         Truck t3 = new Truck(4, "Gri", "Nissan", 2023, 32689, "Motorina",
-         130, "Manuala", 100, 50, 
-         180, 0, 1, 600, 
-         "Inchis");
+         130, "Manuala", 104, 100, 
+         159, 92556, 2, 879, 
+         "Special");
 
         Truck t4 = new Truck(4, "Rosu", "Iveco", 2008, 30648, "Motorina",
-         75, "Manuala", 100, 50, 
-         180, 0, 1, 600, 
-         "Inchis");
+         75, "Semi-Automata", 125, 53, 
+         205, 68597, 1, 530, 
+         "Deschis");
 
         Truck t5 = new Truck(4, "Galben", "DAF", 2007, 28591, "Benzina",
-         120, "Manuala", 100, 50, 
-         180, 0, 1, 600, 
+         120, "Manuala", 101, 95, 
+         210, 83246, 1, 721, 
          "Inchis");
 
         Truck t6 = new Truck(6, "Albastru", "Volvo", 2016, 25840, "Benzina",
-         90, "Manuala", 100, 50, 
-         180, 0, 1, 600, 
+         90, "Manuala", 119, 93, 
+         202, 49752, 2, 644, 
          "Inchis");
 
         Truck t7 = new Truck(4, "Gri", "Nissan", 2015, 30580, "Motorina",
-         138, "Manuala", 100, 50, 
-         180, 0, 1, 600, 
-         "Inchis");
+         138, "Semi-Automata", 137, 88, 
+         158, 71714, 1, 622, 
+         "Deschis");
 
         Truck t8 = new Truck(4, "Violet", "DAF", 2006, 31460, "Benzina",
-         62, "Manuala", 100, 50, 
-         180, 0, 1, 600, 
+         62, "Manuala", 146, 100, 
+         180, 71111, 2, 758, 
          "Inchis");
 
         Truck t9 = new Truck(6, "Gri", "DAF", 2025, 29270, "Motorina",
-         138, "Manuala", 100, 50, 
-         180, 0, 1, 600, 
+         138, "Manuala", 119, 95, 
+         180, 63784, 1, 915, 
          "Inchis");
 
         Truck t10 = new Truck(6, "Alb", "Fiat", 2006, 25862, "Benzina",
-         68, "Manuala", 100, 50, 
-         180, 0, 1, 600, 
-         "Inchis");
+         68, "Semi-Automata", 100, 53, 
+         180, 33395, 1, 720, 
+         "Deschis");
 
         System.out.println("\n\tTestare met toString()");
         System.out.println(c1.toString());
