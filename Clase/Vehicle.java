@@ -1,3 +1,7 @@
+package Clase;
+
+import Clase_ajutatoare_metode.VanzareVehicule;
+
 public abstract class Vehicle implements VanzareVehicule{
     protected int nrRoti;
     protected String culoare;
@@ -203,13 +207,13 @@ public boolean esteSH(){
 
 @Override
 public int calcImpozitAnual(){
-        //incepem cu taxa de 50 EURO
-        int impozit=50;
-        impozit+=this.getPutereMotor();
-        if(this.esteSH()==true){
-            impozit+=100;
-        }
-        return impozit;
+    //incepem cu taxa de 50 EURO
+    int impozit=50;
+    impozit+=this.getPutereMotor();
+    if(this.esteSH()==true){
+        impozit+=100;
+    }
+    return impozit;
 
 }
 
