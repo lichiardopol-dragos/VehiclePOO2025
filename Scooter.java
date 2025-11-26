@@ -1,4 +1,3 @@
-package Clase;
 public class Scooter extends Vehicle{
 
     //atribute private

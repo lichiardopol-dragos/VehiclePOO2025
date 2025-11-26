@@ -1,4 +1,3 @@
-package Clase;
 public class ElectricBike extends Vehicle{
     
     private int accel0100;
