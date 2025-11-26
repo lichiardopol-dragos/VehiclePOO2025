@@ -1,0 +1,20 @@
+public class ElectricBike extends Vehicle{
+    
+    private int accel0100;
+
+    public ElectricBike(){
+        super();
+        this.accel0100=90;
+    }
+
+    public ElectricBike(int nrRoti, String culoare, String brand, int anLansare, int pret, String tipCombustibil, int putereMotor, String tipCutieViteze, int inaltime, int capRezervor, int vitMaxima, int kmParcursi, int nrLocuri, int accel0100){
+        super(nrRoti, culoare, brand, anLansare, pret, tipCombustibil, putereMotor, tipCutieViteze, inaltime, capRezervor, vitMaxima, kmParcursi, nrLocuri);
+        this.accel0100=accel0100;
+    }
+
+    public ElectricBike(ElectricBike b){
+        super(b);
+        this.accel0100=b.accel0100;
+    }
+
+}
