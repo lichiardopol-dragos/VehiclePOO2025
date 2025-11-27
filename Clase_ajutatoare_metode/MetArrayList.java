@@ -3,7 +3,12 @@ package Clase_ajutatoare_metode;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Clase.ATV;
+import Clase.Car;
+import Clase.ElectricBike;
 import Clase.Motorcycle;
+import Clase.Scooter;
+import Clase.Truck;
 import Clase.Vehicle;
 
 
@@ -11,7 +16,8 @@ public class MetArrayList {
     public static void parcurgereVector(ArrayList<Vehicle> v, String part1, String part2)
     {
         for (Vehicle vehicul : v) {
-            if (vehicul instanceof Motorcycle){
+            if (vehicul instanceof ATV || vehicul instanceof Car ||  vehicul instanceof ElectricBike ||
+                vehicul instanceof Motorcycle || vehicul instanceof Scooter || vehicul instanceof Truck) {
                 System.out.println(part1 + " \n\n\n");
                 System.out.println(vehicul.toString() + "\n");
             } 
