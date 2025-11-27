@@ -1,3 +1,4 @@
+package Clase;
 public class Motorcycle extends Vehicle{
     //atribute private
     private String tipTransmisie;

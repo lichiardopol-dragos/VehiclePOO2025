@@ -1,3 +1,4 @@
+package Clase;
 public class ATV extends Vehicle{
 
     private boolean isVinci;
@@ -16,5 +17,13 @@ public class ATV extends Vehicle{
         super(b);
         this.isVinci=b.isVinci;
     }
+
+    public boolean getIsVinci(){
+        return this.isVinci;
+    }
     
+    public void setIsVinci(boolean isVinci){
+        this.isVinci = isVinci;
+    }
+
 }
