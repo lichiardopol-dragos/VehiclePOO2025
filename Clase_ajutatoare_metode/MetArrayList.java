@@ -18,7 +18,7 @@ public class MetArrayList {
             else {
                 System.out.println("\n\n " + part2 + " \n\n");
                 System.out.println(vehicul.toString() + "\n");
-            }git
+            }
         }
     }
 
