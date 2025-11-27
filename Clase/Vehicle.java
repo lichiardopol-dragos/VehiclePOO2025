@@ -198,8 +198,8 @@ public abstract class Vehicle implements VanzareVehicule{
 @Override
 public boolean esteSH(){
     if(
-        (2025-a.getAnLansare())>=10 &
-        a.getKmParcursi() >= 100000 &
+        (2025-this.getAnLansare())>=10 &&
+        this.getKmParcursi() >= 100000 
     )
         return true;
     else return false;
