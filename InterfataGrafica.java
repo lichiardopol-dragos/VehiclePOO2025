@@ -343,7 +343,7 @@ public class InterfataGrafica {
         JPanel panou = new JPanel();
         cadru.add(panou);
 
-        Dimension dimensiuneButon = new Dimension(100,40);
+        Dimension dimensiuneButon = new Dimension(60, 20);
 
         String tooltipCarTruck = "Initializeaza vectorul principal cu 10 obiecte de tip Car, respectiv 10 de tip Truck.";
         ActionListener CarTruck = new ActionListener() {
@@ -383,7 +383,7 @@ public class InterfataGrafica {
         };
 
         JButton initCarTruck = InterfataGrafica.createButton("Initializare Car Truck", dimensiuneButon, tooltipCarTruck, CarTruck);
-        cadru.add(initCarTruck, BorderLayout.NORTH);
+        cadru.add(initCarTruck);
     }
 
     public static JButton createButton(String name, Dimension dimensiune, String toolTip, ActionListener actiune) {
