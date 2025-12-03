@@ -341,7 +341,10 @@ public class InterfataGrafica {
         cadru.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panou = new JPanel();
-        cadru.add(panou);
+        
+
+        GridLayout asezare = new GridLayout(2, 3, 100, 100);
+        panou.setLayout(asezare);
 
         Dimension dimensiuneButon = new Dimension(60, 20);
 
@@ -350,10 +353,9 @@ public class InterfataGrafica {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
 
-                if (!vectorPrincipal.isEmpty())
+                if (!vectorPrincipal.isEmpty()){
                     vectorPrincipal.clear();
-                else
-                {
+                }   
                     vectorPrincipal.add(c1);
                     vectorPrincipal.add(c2);
                     vectorPrincipal.add(c3);
@@ -378,12 +380,93 @@ public class InterfataGrafica {
 
                     JOptionPane.showMessageDialog(cadru, "Vectorul a fost initializat cu succes!");
                 }
+            };
+
+        String tooltipMotorScooter = "Initializeaza vectorul principal cu 10 obiecte de tip Motorcycle, respectiv 10 de tip Scooter.";
+        ActionListener MotorScooter = new ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+
+                if (!vectorPrincipal.isEmpty())
+                    vectorPrincipal.clear();
+
+                    vectorPrincipal.add(m1);
+                    vectorPrincipal.add(m2);
+                    vectorPrincipal.add(m3);
+                    vectorPrincipal.add(m4);
+                    vectorPrincipal.add(m5);
+                    vectorPrincipal.add(m6);
+                    vectorPrincipal.add(m7);
+                    vectorPrincipal.add(m8);
+                    vectorPrincipal.add(m9);
+                    vectorPrincipal.add(m10);
+
+                    vectorPrincipal.add(s1);
+                    vectorPrincipal.add(s2);
+                    vectorPrincipal.add(s3);
+                    vectorPrincipal.add(s4);
+                    vectorPrincipal.add(s5);
+                    vectorPrincipal.add(s6);
+                    vectorPrincipal.add(s7);
+                    vectorPrincipal.add(s8);
+                    vectorPrincipal.add(s9);
+                    vectorPrincipal.add(s10);
+
+                    JOptionPane.showMessageDialog(cadru, "Vectorul a fost initializat cu succes!");
+                
             }
-        
         };
+        
+        String tooltipAtvElectricBike = "Initializeaza vectorul principal cu 10 obiecte de tip ATV, respectiv 10 de tip ElectricBike.";
+        ActionListener AtvElectricBike = new ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+
+                if (!vectorPrincipal.isEmpty())
+                    vectorPrincipal.clear();
+
+                    vectorPrincipal.add(a1);
+                    vectorPrincipal.add(a2);
+                    vectorPrincipal.add(a3);
+                    vectorPrincipal.add(a4);
+                    vectorPrincipal.add(a5);
+                    vectorPrincipal.add(a6);
+                    vectorPrincipal.add(a7);
+                    vectorPrincipal.add(a8);
+                    vectorPrincipal.add(a9);
+                    vectorPrincipal.add(a10);
+
+                    vectorPrincipal.add(eb1);
+                    vectorPrincipal.add(eb2);
+                    vectorPrincipal.add(eb3);
+                    vectorPrincipal.add(eb4);
+                    vectorPrincipal.add(eb5);
+                    vectorPrincipal.add(eb6);
+                    vectorPrincipal.add(eb7);
+                    vectorPrincipal.add(eb8);
+                    vectorPrincipal.add(eb9);
+                    vectorPrincipal.add(eb10);
+
+                    JOptionPane.showMessageDialog(cadru, "Vectorul a fost initializat cu succes!");
+                
+                }
+            };
+
+        String toolTipBrandViteze = "Cauta vehicule dupa brand si cutie de viteze.";
+        
+        String toolTipAnPret = "Cauta vehicule dupa anul de lansare si pretul maxim cerut.";
 
         JButton initCarTruck = InterfataGrafica.createButton("Initializare Car Truck", dimensiuneButon, tooltipCarTruck, CarTruck);
-        cadru.add(initCarTruck);
+        JButton initMotorScooter = InterfataGrafica.createButton("Initializare Motorcycle Scooter", dimensiuneButon, tooltipMotorScooter, MotorScooter);
+        JButton initAtvElectricBike = InterfataGrafica.createButton("Initializare ATV ElectricBike", dimensiuneButon, tooltipAtvElectricBike, AtvElectricBike);
+        JButton cautBrandViteze = InterfataGrafica.createButton("Cautare Brand si Cutie Viteze", dimensiuneButon, toolTipBrandViteze);
+        JButton cautAnPret = InterfataGrafica.createButton("Cautare An si Pret", dimensiuneButon, toolTipAnPret);
+        panou.add(initCarTruck);
+        panou.add(initMotorScooter);
+        panou.add(initAtvElectricBike);
+        panou.add(cautBrandViteze);
+        panou.add(cautAnPret);
+        cadru.add(panou);
     }
 
     public static JButton createButton(String name, Dimension dimensiune, String toolTip, ActionListener actiune) {
@@ -393,6 +476,14 @@ public class InterfataGrafica {
          button.setToolTipText(toolTip);
          button.addActionListener(actiune);
          return button;
+    }
+
+    public static JButton createButton(String name, Dimension dimensiune, String toolTip){
+            JButton button = new JButton(name);
+            button.setPreferredSize(dimensiune);
+            button.setFocusable(false);
+            button.setToolTipText(toolTip);
+            return button;
     }
 
 }
