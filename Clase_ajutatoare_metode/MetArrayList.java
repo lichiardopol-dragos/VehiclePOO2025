@@ -13,6 +13,7 @@ import Clase.Vehicle;
 
 
 public class MetArrayList {
+
     public static void parcurgereVector(ArrayList<Vehicle> v, String part1, String part2)
     {
         for (Vehicle vehicul : v) {
@@ -91,6 +92,5 @@ public class MetArrayList {
             return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
         else return afisare;
     }
-
 
 }
