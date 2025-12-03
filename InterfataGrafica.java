@@ -346,10 +346,10 @@ public class InterfataGrafica {
         Dimension dimensiuneButon = new Dimension(100,40);
 
         String tooltipCarTruck = "Initializeaza vectorul principal cu 10 obiecte de tip Car, respectiv 10 de tip Truck.";
-
         ActionListener CarTruck = new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+
                 if (!vectorPrincipal.isEmpty())
                     vectorPrincipal.clear();
                 else
@@ -364,7 +364,7 @@ public class InterfataGrafica {
                     vectorPrincipal.add(c8);
                     vectorPrincipal.add(c9);
                     vectorPrincipal.add(c10);
-                    
+
                     vectorPrincipal.add(t1);
                     vectorPrincipal.add(t2);
                     vectorPrincipal.add(t3);
@@ -375,20 +375,23 @@ public class InterfataGrafica {
                     vectorPrincipal.add(t8);
                     vectorPrincipal.add(t9);
                     vectorPrincipal.add(t10);
+
+                    JOptionPane.showMessageDialog(cadru, "Vectorul a fost initializat cu succes!");
                 }
             }
+        
         };
 
-        JButton initCarTruck = InterfataGrafica.createButton("Initializare Car Truck", dimensiuneButon, tooltipCarTruck);
+        JButton initCarTruck = InterfataGrafica.createButton("Initializare Car Truck", dimensiuneButon, tooltipCarTruck, CarTruck);
         cadru.add(initCarTruck, BorderLayout.NORTH);
     }
 
-    public static JButton createButton(String name, Dimension dimensiune, String toolTip) {
+    public static JButton createButton(String name, Dimension dimensiune, String toolTip, ActionListener actiune) {
          JButton button = new JButton(name);
          button.setPreferredSize(dimensiune);
          button.setFocusable(false);
          button.setToolTipText(toolTip);
-         button.addActionListener(null);
+         button.addActionListener(actiune);
          return button;
     }
 
