@@ -41,7 +41,7 @@ public class MetArrayList {
             int an = v.get(i).getAnLansare();
             int pret = v.get(i).getPret();
             if (an >= anMinim && pret <= pretMaxim)
-                afisare += v.get(i)+" ";
+                afisare += v.get(i)+"\n\n";
         }
         
         if(afisare.isEmpty())
@@ -62,7 +62,29 @@ public class MetArrayList {
             String thisBrand=v.get(i).getBrand();
             String thisCutieViteze=v.get(i).getTipCutieViteze();
             if(thisBrand.equals(brand) && thisCutieViteze.equals(cutieViteze))
-                afisare+=v.get(i)+" ";
+                afisare+=v.get(i)+"\n\n";
+        }
+        
+        if(afisare.isEmpty())
+            return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
+        else return afisare;
+    }
+
+    public static String CautareDupaBrandSiPret(ArrayList<Vehicle> v){
+        String afisare="";
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Brand: ");
+        String brand=scanner.next();
+        System.out.print("Pret 1: ");
+        String pret1=scanner.next();
+        System.out.print("Pret 2: ");
+        String pret2=scanner.next();
+
+        for(int i=0;i<v.size();i++) {
+            String thisBrand=v.get(i).getBrand();
+            int thisPret=v.get(i).getPret();
+            if(!(thisBrand.equals(brand)) && (thisPret>=Integer.parseInt(pret1) || thisPret<=Integer.parseInt(pret2)))
+                afisare+=v.get(i)+"\n\n";
         }
         
         if(afisare.isEmpty())

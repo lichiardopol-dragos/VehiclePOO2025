@@ -136,11 +136,14 @@ public class ParcurgereVectATVElectricBike {
 
         MetArrayList.parcurgereVector(atvNelectricbike, "ATVs din vector:", "Electric Bikes din vector:");
 
-        System.out.println("\tFiltru de cautare interval de pret si an vechime");
-        System.out.println(MetArrayList.PretBunPentruAn(atvNelectricbike));
+        //System.out.println("\tFiltru de cautare interval de pret si an vechime");
+        //System.out.println(MetArrayList.PretBunPentruAn(atvNelectricbike));
 
-        System.out.println("\tFiltru de cautare dupa brand si cutie de viteze");
-        System.out.println(MetArrayList.CautareDupaBrandSiCutieViteze(atvNelectricbike));
+        //System.out.println("\tFiltru de cautare dupa brand si cutie de viteze");
+        //System.out.println(MetArrayList.CautareDupaBrandSiCutieViteze(atvNelectricbike));
+
+        
+        
 
     }
 }

@@ -146,11 +146,13 @@ public class ParcurgereVectCarTruck {
 
         MetArrayList.parcurgereVector(carNtruck, "Cars din vector:", "Trucks din vector:");
 
-        System.out.println("\tFiltru de cautare interval de pret si an vechime");
-        System.out.println(MetArrayList.PretBunPentruAn(carNtruck));
+        //System.out.println("\tFiltru de cautare interval de pret si an vechime");
+        //System.out.println(MetArrayList.PretBunPentruAn(carNtruck));
 
-        System.out.println("\tFiltru de cautare dupa brand si cutie de viteze");
-        System.out.println(MetArrayList.CautareDupaBrandSiCutieViteze(carNtruck));
+        //System.out.println("\tFiltru de cautare dupa brand si cutie de viteze");
+        //System.out.println(MetArrayList.CautareDupaBrandSiCutieViteze(carNtruck));
 
+        System.out.println("\tFiltru de cautare dupa brand si pret");
+        System.out.println(MetArrayList.CautareDupaBrandSiPret(carNtruck));
     }
 }
