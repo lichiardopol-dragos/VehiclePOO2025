@@ -342,7 +342,6 @@ public class InterfataGrafica {
 
         JPanel panou = new JPanel();
         
-
         GridLayout asezare = new GridLayout(2, 3, 100, 100);
         panou.setLayout(asezare);
 
@@ -454,36 +453,58 @@ public class InterfataGrafica {
 
         String toolTipBrandViteze = "Cauta vehicule dupa brand si cutie de viteze.";
         
+        ActionListener cautBrandViteze = new ActionListener() {
+            
+        };
+
         String toolTipAnPret = "Cauta vehicule dupa anul de lansare si pretul maxim cerut.";
 
-        JButton initCarTruck = InterfataGrafica.createButton("Initializare Car Truck", dimensiuneButon, tooltipCarTruck, CarTruck);
-        JButton initMotorScooter = InterfataGrafica.createButton("Initializare Motorcycle Scooter", dimensiuneButon, tooltipMotorScooter, MotorScooter);
-        JButton initAtvElectricBike = InterfataGrafica.createButton("Initializare ATV ElectricBike", dimensiuneButon, tooltipAtvElectricBike, AtvElectricBike);
-        JButton cautBrandViteze = InterfataGrafica.createButton("Cautare Brand si Cutie Viteze", dimensiuneButon, toolTipBrandViteze);
-        JButton cautAnPret = InterfataGrafica.createButton("Cautare An si Pret", dimensiuneButon, toolTipAnPret);
+        String toolTipBrandPret = "Cauta vehicule dupa brand si un interval de pret.";
+
+        JButton initCarTruck = InterfataGrafica.createButton("<html>Initializare<br />Car Truck</html>", dimensiuneButon, tooltipCarTruck, CarTruck);
+        JButton initMotorScooter = InterfataGrafica.createButton("<html>Initializare<br />Motorcycle Scooter</html>", dimensiuneButon, tooltipMotorScooter, MotorScooter);
+        JButton initAtvElectricBike = InterfataGrafica.createButton("<html>Initializare<br />ATV ElectricBike</html>", dimensiuneButon, tooltipAtvElectricBike, AtvElectricBike);
+        JButton cautBrandViteze = InterfataGrafica.createButton("<html>Cautare<br />Brand si Cutie Viteze</html>", dimensiuneButon, toolTipBrandViteze);
+        JButton cautAnPret = InterfataGrafica.createButton("<html>Cautare<br />An si Pret</html>", dimensiuneButon, toolTipAnPret);
+        JButton cautBrandPret = InterfataGrafica.createButton("<html>Cautare<br />Brand si Pret</html>", dimensiuneButon, toolTipBrandPret);
+
         panou.add(initCarTruck);
         panou.add(initMotorScooter);
         panou.add(initAtvElectricBike);
         panou.add(cautBrandViteze);
         panou.add(cautAnPret);
+        panou.add(cautBrandPret);
         cadru.add(panou);
     }
 
     public static JButton createButton(String name, Dimension dimensiune, String toolTip, ActionListener actiune) {
-         JButton button = new JButton(name);
-         button.setPreferredSize(dimensiune);
-         button.setFocusable(false);
-         button.setToolTipText(toolTip);
-         button.addActionListener(actiune);
-         return button;
+        JButton button = new JButton(name);
+        button.setPreferredSize(dimensiune);
+        button.setFocusable(false);
+        button.setToolTipText(toolTip);
+        button.addActionListener(actiune);
+        
+        Font defFont = new Font(button.getFont().getName(), button.getFont().getStyle(), 18);
+        button.setFont(defFont);
+
+        button.setHorizontalAlignment(SwingConstants.CENTER);
+        button.setVerticalAlignment(SwingConstants.CENTER);
+        return button;
     }
 
     public static JButton createButton(String name, Dimension dimensiune, String toolTip){
-            JButton button = new JButton(name);
-            button.setPreferredSize(dimensiune);
-            button.setFocusable(false);
-            button.setToolTipText(toolTip);
-            return button;
+        JButton button = new JButton(name);
+        button.setPreferredSize(dimensiune);
+        button.setFocusable(false);
+        button.setToolTipText(toolTip);
+
+        Font defFont = new Font(button.getFont().getName(), button.getFont().getStyle(), 18);
+        button.setFont(defFont);
+
+        button.setHorizontalAlignment(SwingConstants.CENTER);
+        button.setVerticalAlignment(SwingConstants.CENTER);
+        
+        return button;
     }
 
 }
