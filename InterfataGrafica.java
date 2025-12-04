@@ -556,41 +556,44 @@ public class InterfataGrafica {
                     int pretMin = Integer.parseInt(JOptionPane.showInputDialog("Pret minim din interval: "));
                     int pretMax = Integer.parseInt(JOptionPane.showInputDialog("Pret maxim din interval: "));
                     int nrCur = 0;
-
+                    int rezultat = 0;
                     for (int i=0; i<vectorPrincipal.size(); i++) {
                         afisCur = MetArrayList.CautareDupaBrandSiPret(vectorPrincipal, i, brand, pretMin, pretMax);
                         
                         if(afisCur.equals("Nu s-a gasit un vehicul care sa indeplineasca cerintele."))
                             continue;
-
-                        if(afisCur.equals("Nu s-a gasit un vehicul care sa indeplineasca cerintele.") && nrCur==0)
+                        else if(afisCur.equals("Nu s-a gasit un vehicul care sa indeplineasca cerintele.") && nrCur==0)
                             JOptionPane.showMessageDialog(cadru, "Nu s-a gasit niciun vehicul care sa indeplineasca conditiile cerute.");
-
-                        int rezultat = JOptionPane.showOptionDialog(cadru,
+                        else 
+                            {
+                            nrCur++;
+                            rezultat = JOptionPane.showOptionDialog(cadru,
                             "Obiectul "+ nrCur + ":\n\n" + afisCur,
                             "Rezultate cautare brand si pret",
                             JOptionPane.OK_CANCEL_OPTION,
                             JOptionPane.INFORMATION_MESSAGE,
                             null,
                             butText,
-                            butText[0]);
-                            
-                        nrCur++;
+                            butText[0]);}
 
-                        if (rezultat == JOptionPane.CANCEL_OPTION)
+                        if (rezultat == JOptionPane.CANCEL_OPTION){
                             break;
+                        }
+    
                     }
                 }
                 else {
                     JOptionPane.showMessageDialog(cadru, "Vectorul nu este initializat. Va rugam sa il initializati inainte de a cauta.");
                 }
+            }
+        };
 
         JButton initCarTruck = InterfataGrafica.createButton("<html>Initializare<br />Car Truck</html>", dimensiuneButon, tooltipCarTruck, CarTruck);
         JButton initMotorScooter = InterfataGrafica.createButton("<html>Initializare<br />Motorcycle Scooter</html>", dimensiuneButon, tooltipMotorScooter, MotorScooter);
         JButton initAtvElectricBike = InterfataGrafica.createButton("<html>Initializare<br />ATV ElectricBike</html>", dimensiuneButon, tooltipAtvElectricBike, AtvElectricBike);
         JButton cautBrandViteze = InterfataGrafica.createButton("<html>Cautare<br />Brand si Cutie Viteze</html>", dimensiuneButon, toolTipBrandViteze, BrandViteze);
         JButton cautAnPret = InterfataGrafica.createButton("<html>Cautare<br />An si Pret</html>", dimensiuneButon, toolTipAnPret, AnMinPretMax);
-        JButton cautBrandPret = InterfataGrafica.createButton("<html>Cautare<br />Brand si Pret</html>", dimensiuneButon, toolTipBrandPret);
+        JButton cautBrandPret = InterfataGrafica.createButton("<html>Cautare<br />Brand si Pret</html>", dimensiuneButon, toolTipBrandPret, BrandPret);
 
         panou.add(initCarTruck);
         panou.add(initMotorScooter);
@@ -613,21 +616,6 @@ public class InterfataGrafica {
 
         button.setHorizontalAlignment(SwingConstants.CENTER);
         button.setVerticalAlignment(SwingConstants.CENTER);
-        return button;
-    }
-
-    public static JButton createButton(String name, Dimension dimensiune, String toolTip){
-        JButton button = new JButton(name);
-        button.setPreferredSize(dimensiune);
-        button.setFocusable(false);
-        button.setToolTipText(toolTip);
-
-        Font defFont = new Font(button.getFont().getName(), button.getFont().getStyle(), 18);
-        button.setFont(defFont);
-
-        button.setHorizontalAlignment(SwingConstants.CENTER);
-        button.setVerticalAlignment(SwingConstants.CENTER);
-        
         return button;
     }
 

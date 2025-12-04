@@ -1,7 +1,6 @@
 package Clase_ajutatoare_metode;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import Clase.ATV;
 import Clase.Car;
@@ -55,22 +54,13 @@ public class MetArrayList {
         else return afisare;
     }
 
-    public static String CautareDupaBrandSiPret(ArrayList<Vehicle> v){
+    public static String CautareDupaBrandSiPret(ArrayList<Vehicle> v, int a, String brand, int pret1, int pret2){
         String afisare="";
-        Scanner scanner=new Scanner(System.in);
-        System.out.print("Brand: ");
-        String brand=scanner.next();
-        System.out.print("Pret 1: ");
-        String pret1=scanner.next();
-        System.out.print("Pret 2: ");
-        String pret2=scanner.next();
-
-        for(int i=0;i<v.size();i++) {
-            String thisBrand=v.get(i).getBrand();
-            int thisPret=v.get(i).getPret();
-            if(!(thisBrand.equals(brand)) && (thisPret>=Integer.parseInt(pret1) || thisPret<=Integer.parseInt(pret2)))
-                afisare+=v.get(i)+"\n\n";
-        }
+        
+        String thisBrand=v.get(a).getBrand();
+        int thisPret=v.get(a).getPret();
+        if(!(thisBrand.equals(brand)) && ((thisPret>=pret1) || (thisPret<=pret2)))
+            afisare+=v.get(a);
         
         if(afisare.isEmpty())
             return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
