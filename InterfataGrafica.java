@@ -543,8 +543,48 @@ public class InterfataGrafica {
 
         String toolTipBrandPret = "Cauta vehicule dupa brand-ul si intervalul de preturi cerute.";
 
+        ActionListener BrandPret = new ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
 
-        
+                String afisCur = "";
+                Object[] butText = {"Urmatorul", "Iesire"};
+
+                if (!vectorPrincipal.isEmpty())
+                {
+                    String brand = JOptionPane.showInputDialog("Brand: ");
+                    int pretMin = Integer.parseInt(JOptionPane.showInputDialog("Pret minim din interval: "));
+                    int pretMax = Integer.parseInt(JOptionPane.showInputDialog("Pret maxim din interval: "));
+                    int nrCur = 0;
+
+                    for (int i=0; i<vectorPrincipal.size(); i++) {
+                        afisCur = MetArrayList.CautareDupaBrandSiPret(vectorPrincipal, i, brand, pretMin, pretMax);
+                        
+                        if(afisCur.equals("Nu s-a gasit un vehicul care sa indeplineasca cerintele."))
+                            continue;
+
+                        if(afisCur.equals("Nu s-a gasit un vehicul care sa indeplineasca cerintele.") && nrCur==0)
+                            JOptionPane.showMessageDialog(cadru, "Nu s-a gasit niciun vehicul care sa indeplineasca conditiile cerute.");
+
+                        int rezultat = JOptionPane.showOptionDialog(cadru,
+                            "Obiectul "+ nrCur + ":\n\n" + afisCur,
+                            "Rezultate cautare brand si pret",
+                            JOptionPane.OK_CANCEL_OPTION,
+                            JOptionPane.INFORMATION_MESSAGE,
+                            null,
+                            butText,
+                            butText[0]);
+                            
+                        nrCur++;
+
+                        if (rezultat == JOptionPane.CANCEL_OPTION)
+                            break;
+                    }
+                }
+                else {
+                    JOptionPane.showMessageDialog(cadru, "Vectorul nu este initializat. Va rugam sa il initializati inainte de a cauta.");
+                }
+
         JButton initCarTruck = InterfataGrafica.createButton("<html>Initializare<br />Car Truck</html>", dimensiuneButon, tooltipCarTruck, CarTruck);
         JButton initMotorScooter = InterfataGrafica.createButton("<html>Initializare<br />Motorcycle Scooter</html>", dimensiuneButon, tooltipMotorScooter, MotorScooter);
         JButton initAtvElectricBike = InterfataGrafica.createButton("<html>Initializare<br />ATV ElectricBike</html>", dimensiuneButon, tooltipAtvElectricBike, AtvElectricBike);
