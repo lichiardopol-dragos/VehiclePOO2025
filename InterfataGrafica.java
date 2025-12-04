@@ -499,7 +499,7 @@ public class InterfataGrafica {
 
         String toolTipAnPret = "Cauta vehicule dupa anul de lansare si pretul maxim cerut.";
 
-        /* ActionListener BrandViteze = new ActionListener() {
+        ActionListener BrandViteze = new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
 
@@ -540,7 +540,6 @@ public class InterfataGrafica {
 
             }
         };
- */
 
         String toolTipBrandPret = "Cauta vehicule dupa brand si un interval de pret.";
 

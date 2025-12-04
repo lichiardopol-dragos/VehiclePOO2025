@@ -3,8 +3,6 @@ package Clase_ajutatoare_metode;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-
 import Clase.ATV;
 import Clase.Car;
 import Clase.ElectricBike;
@@ -31,21 +29,13 @@ public class MetArrayList {
         }
     }
 
-    public static String PretBunPentruAn(ArrayList<Vehicle> v){
+    public static String PretBunPentruAn(ArrayList<Vehicle> v, int a, int anMinim, int pretMaxim){
         String afisare="";
-        Scanner scanner=new Scanner(System.in);
-        System.out.print("Anul minim cerut: ");
-        int anMinim=scanner.nextInt();
-        System.out.print("Pretul maxim cerut: ");
-        int pretMaxim=scanner.nextInt();
-        
 
-        for(int i=0;i<v.size();i++) {
-            int an = v.get(i).getAnLansare();
-            int pret = v.get(i).getPret();
-            if (an >= anMinim && pret <= pretMaxim)
-                afisare += v.get(i)+"\n\n";
-        }
+        int an = v.get(a).getAnLansare();
+        int pret = v.get(a).getPret();
+        if (an >= anMinim && pret <= pretMaxim)
+                afisare += v.get(a);
         
         if(afisare.isEmpty())
             return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
@@ -54,7 +44,7 @@ public class MetArrayList {
 
     public static String CautareDupaBrandSiCutieViteze(ArrayList<Vehicle> v, int a, String brand, String cutieViteze){
         String afisare="";
-        
+
         String thisBrand=v.get(a).getBrand();
         String thisCutieViteze=v.get(a).getTipCutieViteze();
         if(thisBrand.equals(brand) && thisCutieViteze.equals(cutieViteze))
