@@ -3,6 +3,8 @@ package Clase_ajutatoare_metode;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 import Clase.ATV;
 import Clase.Car;
 import Clase.ElectricBike;
@@ -50,21 +52,15 @@ public class MetArrayList {
         else return afisare;
     }
 
-    public static String CautareDupaBrandSiCutieViteze(ArrayList<Vehicle> v){
+    public static String CautareDupaBrandSiCutieViteze(ArrayList<Vehicle> v, int a){
         String afisare="";
-        Scanner scanner=new Scanner(System.in);
-        System.out.print("Brand: ");
-        String brand=scanner.next();
-        System.out.print("Cutie de viteze: ");
-        String cutieViteze=scanner.next();
+        String brand = JOptionPane.showInputDialog("Brand: ");
+        String cutieViteze = JOptionPane.showInputDialog("Cutie de viteze: ");
         
-
-        for(int i=0;i<v.size();i++) {
-            String thisBrand=v.get(i).getBrand();
-            String thisCutieViteze=v.get(i).getTipCutieViteze();
-            if(thisBrand.equals(brand) && thisCutieViteze.equals(cutieViteze))
-                afisare+=v.get(i)+"\n\n";
-        }
+        String thisBrand=v.get(a).getBrand();
+        String thisCutieViteze=v.get(a).getTipCutieViteze();
+        if(thisBrand.equals(brand) && thisCutieViteze.equals(cutieViteze))
+            afisare+=v.get(a);
         
         if(afisare.isEmpty())
             return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";

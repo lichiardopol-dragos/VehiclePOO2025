@@ -3,6 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 import Clase.*;
+import Clase_ajutatoare_metode.MetArrayList;
+
 import java.util.ArrayList;
 
 public class InterfataGrafica {
@@ -453,8 +455,30 @@ public class InterfataGrafica {
 
         String toolTipBrandViteze = "Cauta vehicule dupa brand si cutie de viteze.";
         
-        ActionListener cautBrandViteze = new ActionListener() {
-            
+        ActionListener BrandViteze = new ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+
+                String afisCur = "";
+                Object[] butText = {"Urmatorul", "Iesire"};
+
+                for (int i=0; i<vectorPrincipal.size(); i++) {
+                    afisCur = "Obiectul "+ (i+1) + " din " + vectorPrincipal.size() + ":\n\n" + MetArrayList.CautareDupaBrandSiCutieViteze(vectorPrincipal, i);
+
+                    int rezultat = JOptionPane.showOptionDialog(cadru,
+                        "Obiectul "+ (i+1) + " din " + vectorPrincipal.size() + ":\n\n" +
+                        MetArrayList.CautareDupaBrandSiCutieViteze(vectorPrincipal, i),
+                        "Rezultate cautare brand si cutie de viteze",
+                        JOptionPane.OK_CANCEL_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,
+                        butText,
+                        butText[0]);
+
+    
+                }
+
+            }
         };
 
         String toolTipAnPret = "Cauta vehicule dupa anul de lansare si pretul maxim cerut.";
@@ -464,7 +488,7 @@ public class InterfataGrafica {
         JButton initCarTruck = InterfataGrafica.createButton("<html>Initializare<br />Car Truck</html>", dimensiuneButon, tooltipCarTruck, CarTruck);
         JButton initMotorScooter = InterfataGrafica.createButton("<html>Initializare<br />Motorcycle Scooter</html>", dimensiuneButon, tooltipMotorScooter, MotorScooter);
         JButton initAtvElectricBike = InterfataGrafica.createButton("<html>Initializare<br />ATV ElectricBike</html>", dimensiuneButon, tooltipAtvElectricBike, AtvElectricBike);
-        JButton cautBrandViteze = InterfataGrafica.createButton("<html>Cautare<br />Brand si Cutie Viteze</html>", dimensiuneButon, toolTipBrandViteze);
+        JButton cautBrandViteze = InterfataGrafica.createButton("<html>Cautare<br />Brand si Cutie Viteze</html>", dimensiuneButon, toolTipBrandViteze, BrandViteze);
         JButton cautAnPret = InterfataGrafica.createButton("<html>Cautare<br />An si Pret</html>", dimensiuneButon, toolTipAnPret);
         JButton cautBrandPret = InterfataGrafica.createButton("<html>Cautare<br />Brand si Pret</html>", dimensiuneButon, toolTipBrandPret);
 
