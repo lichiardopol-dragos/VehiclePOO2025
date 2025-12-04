@@ -462,26 +462,85 @@ public class InterfataGrafica {
                 String afisCur = "";
                 Object[] butText = {"Urmatorul", "Iesire"};
 
-                for (int i=0; i<vectorPrincipal.size(); i++) {
-                    afisCur = "Obiectul "+ (i+1) + " din " + vectorPrincipal.size() + ":\n\n" + MetArrayList.CautareDupaBrandSiCutieViteze(vectorPrincipal, i);
+                if (!vectorPrincipal.isEmpty())
+                {
+                    String brand = JOptionPane.showInputDialog("Brand: ");
+                    String cutieViteze = JOptionPane.showInputDialog("Cutie de viteze: ");
+                    int nrCur = 1;
 
-                    int rezultat = JOptionPane.showOptionDialog(cadru,
-                        "Obiectul "+ (i+1) + " din " + vectorPrincipal.size() + ":\n\n" +
-                        MetArrayList.CautareDupaBrandSiCutieViteze(vectorPrincipal, i),
-                        "Rezultate cautare brand si cutie de viteze",
-                        JOptionPane.OK_CANCEL_OPTION,
-                        JOptionPane.INFORMATION_MESSAGE,
-                        null,
-                        butText,
-                        butText[0]);
+                    for (int i=0; i<vectorPrincipal.size(); i++) {
+                        afisCur = MetArrayList.CautareDupaBrandSiCutieViteze(vectorPrincipal, i, brand, cutieViteze);
+                        
+                        if(afisCur.equals("Nu s-a gasit un vehicul care sa indeplineasca cerintele."))
+                            continue;
 
-    
+                        int rezultat = JOptionPane.showOptionDialog(cadru,
+                            "Obiectul "+ nrCur + ":\n\n" + afisCur,
+                            "Rezultate cautare brand si cutie de viteze",
+                            JOptionPane.OK_CANCEL_OPTION,
+                            JOptionPane.INFORMATION_MESSAGE,
+                            null,
+                            butText,
+                            butText[0]);
+
+                        nrCur++;
+
+                        if (rezultat == JOptionPane.CANCEL_OPTION)
+                            break;
+                    }
                 }
+                else {
+                    JOptionPane.showMessageDialog(cadru, "Vectorul nu este initializat. Va rugam sa il initializati inainte de a cauta.");
+                }
+
 
             }
         };
 
         String toolTipAnPret = "Cauta vehicule dupa anul de lansare si pretul maxim cerut.";
+
+        /* ActionListener BrandViteze = new ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+
+                String afisCur = "";
+                Object[] butText = {"Urmatorul", "Iesire"};
+
+                if (!vectorPrincipal.isEmpty())
+                {
+                    String brand = JOptionPane.showInputDialog("Brand: ");
+                    String cutieViteze = JOptionPane.showInputDialog("Cutie de viteze: ");
+                    int nrCur = 1;
+
+                    for (int i=0; i<vectorPrincipal.size(); i++) {
+                        afisCur = MetArrayList.CautareDupaBrandSiCutieViteze(vectorPrincipal, i, brand, cutieViteze);
+                        
+                        if(afisCur.equals("Nu s-a gasit un vehicul care sa indeplineasca cerintele."))
+                            continue;
+
+                        int rezultat = JOptionPane.showOptionDialog(cadru,
+                            "Obiectul "+ nrCur + ":\n\n" + afisCur,
+                            "Rezultate cautare brand si cutie de viteze",
+                            JOptionPane.OK_CANCEL_OPTION,
+                            JOptionPane.INFORMATION_MESSAGE,
+                            null,
+                            butText,
+                            butText[0]);
+                            
+                        nrCur++;
+
+                        if (rezultat == JOptionPane.CANCEL_OPTION)
+                            break;
+                    }
+                }
+                else {
+                    JOptionPane.showMessageDialog(cadru, "Vectorul nu este initializat. Va rugam sa il initializati inainte de a cauta.");
+                }
+
+
+            }
+        };
+ */
 
         String toolTipBrandPret = "Cauta vehicule dupa brand si un interval de pret.";
 

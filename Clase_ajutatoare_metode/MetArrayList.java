@@ -52,10 +52,8 @@ public class MetArrayList {
         else return afisare;
     }
 
-    public static String CautareDupaBrandSiCutieViteze(ArrayList<Vehicle> v, int a){
+    public static String CautareDupaBrandSiCutieViteze(ArrayList<Vehicle> v, int a, String brand, String cutieViteze){
         String afisare="";
-        String brand = JOptionPane.showInputDialog("Brand: ");
-        String cutieViteze = JOptionPane.showInputDialog("Cutie de viteze: ");
         
         String thisBrand=v.get(a).getBrand();
         String thisCutieViteze=v.get(a).getTipCutieViteze();
