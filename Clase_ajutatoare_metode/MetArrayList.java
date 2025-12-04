@@ -1,7 +1,6 @@
 package Clase_ajutatoare_metode;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import Clase.ATV;
 import Clase.Car;
@@ -13,6 +12,7 @@ import Clase.Vehicle;
 
 
 public class MetArrayList {
+
     public static void parcurgereVector(ArrayList<Vehicle> v, String part1, String part2)
     {
         for (Vehicle vehicul : v) {
@@ -28,47 +28,43 @@ public class MetArrayList {
         }
     }
 
-    public static String PretBunPentruAn(ArrayList<Vehicle> v){
+    public static String PretBunPentruAn(ArrayList<Vehicle> v, int a, int anMinim, int pretMaxim){
         String afisare="";
-        Scanner scanner=new Scanner(System.in);
-        System.out.print("Anul minim cerut: ");
-        int anMinim=scanner.nextInt();
-        System.out.print("Pretul maxim cerut: ");
-        int pretMaxim=scanner.nextInt();
-        
 
-        for(int i=0;i<v.size();i++) {
-            int an = v.get(i).getAnLansare();
-            int pret = v.get(i).getPret();
-            if (an >= anMinim && pret <= pretMaxim)
-                afisare += v.get(i)+" ";
-        }
+        int an = v.get(a).getAnLansare();
+        int pret = v.get(a).getPret();
+        if (an >= anMinim && pret <= pretMaxim)
+                afisare += v.get(a);
         
         if(afisare.isEmpty())
             return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
         else return afisare;
     }
 
-    public static String CautareDupaBrandSiCutieViteze(ArrayList<Vehicle> v){
+    public static String CautareDupaBrandSiCutieViteze(ArrayList<Vehicle> v, int a, String brand, String cutieViteze){
         String afisare="";
-        Scanner scanner=new Scanner(System.in);
-        System.out.print("Brand: ");
-        String brand=scanner.next();
-        System.out.print("Cutie de viteze: ");
-        String cutieViteze=scanner.next();
-        
 
-        for(int i=0;i<v.size();i++) {
-            String thisBrand=v.get(i).getBrand();
-            String thisCutieViteze=v.get(i).getTipCutieViteze();
-            if(thisBrand.equals(brand) && thisCutieViteze.equals(cutieViteze))
-                afisare+=v.get(i)+" ";
-        }
+        String thisBrand=v.get(a).getBrand();
+        String thisCutieViteze=v.get(a).getTipCutieViteze();
+        if(thisBrand.equals(brand) && thisCutieViteze.equals(cutieViteze))
+            afisare+=v.get(a);
         
         if(afisare.isEmpty())
             return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
         else return afisare;
     }
 
+    public static String CautareDupaBrandSiPret(ArrayList<Vehicle> v, int a, String brand, int pret1, int pret2){
+        String afisare="";
+        
+        String thisBrand=v.get(a).getBrand();
+        int thisPret=v.get(a).getPret();
+        if(!(thisBrand.equals(brand)) && ((thisPret>=pret1) || (thisPret<=pret2)))
+            afisare+=v.get(a);
+        
+        if(afisare.isEmpty())
+            return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
+        else return afisare;
+    }
 
 }
