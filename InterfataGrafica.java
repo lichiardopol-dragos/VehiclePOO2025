@@ -453,7 +453,7 @@ public class InterfataGrafica {
                 }
             };
 
-        String toolTipBrandViteze = "Cauta vehicule dupa brand si cutie de viteze.";
+        String toolTipBrandViteze = "Cauta vehicule dupa brand-ul si cutia de viteze cerute.";
         
         ActionListener BrandViteze = new ActionListener() {
             @Override
@@ -497,9 +497,9 @@ public class InterfataGrafica {
             }
         };
 
-        String toolTipAnPret = "Cauta vehicule dupa anul de lansare si pretul maxim cerut.";
+        String toolTipAnPret = "Cauta vehicule dupa anul de lansare minim si pretul maxim cerute.";
 
-        ActionListener BrandViteze = new ActionListener() {
+        ActionListener AnMinPretMax = new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
 
@@ -508,19 +508,19 @@ public class InterfataGrafica {
 
                 if (!vectorPrincipal.isEmpty())
                 {
-                    String brand = JOptionPane.showInputDialog("Brand: ");
-                    String cutieViteze = JOptionPane.showInputDialog("Cutie de viteze: ");
+                    int AnMin = Integer.parseInt(JOptionPane.showInputDialog("An minim: "));
+                    int PretMax = Integer.parseInt(JOptionPane.showInputDialog("Pret maxim: "));
                     int nrCur = 1;
 
                     for (int i=0; i<vectorPrincipal.size(); i++) {
-                        afisCur = MetArrayList.CautareDupaBrandSiCutieViteze(vectorPrincipal, i, brand, cutieViteze);
+                        afisCur = MetArrayList.PretBunPentruAn(vectorPrincipal, i, AnMin, PretMax);
                         
                         if(afisCur.equals("Nu s-a gasit un vehicul care sa indeplineasca cerintele."))
                             continue;
 
                         int rezultat = JOptionPane.showOptionDialog(cadru,
                             "Obiectul "+ nrCur + ":\n\n" + afisCur,
-                            "Rezultate cautare brand si cutie de viteze",
+                            "Rezultate cautare an si pret",
                             JOptionPane.OK_CANCEL_OPTION,
                             JOptionPane.INFORMATION_MESSAGE,
                             null,
@@ -541,13 +541,15 @@ public class InterfataGrafica {
             }
         };
 
-        String toolTipBrandPret = "Cauta vehicule dupa brand si un interval de pret.";
+        String toolTipBrandPret = "Cauta vehicule dupa brand-ul si intervalul de preturi cerute.";
 
+
+        
         JButton initCarTruck = InterfataGrafica.createButton("<html>Initializare<br />Car Truck</html>", dimensiuneButon, tooltipCarTruck, CarTruck);
         JButton initMotorScooter = InterfataGrafica.createButton("<html>Initializare<br />Motorcycle Scooter</html>", dimensiuneButon, tooltipMotorScooter, MotorScooter);
         JButton initAtvElectricBike = InterfataGrafica.createButton("<html>Initializare<br />ATV ElectricBike</html>", dimensiuneButon, tooltipAtvElectricBike, AtvElectricBike);
         JButton cautBrandViteze = InterfataGrafica.createButton("<html>Cautare<br />Brand si Cutie Viteze</html>", dimensiuneButon, toolTipBrandViteze, BrandViteze);
-        JButton cautAnPret = InterfataGrafica.createButton("<html>Cautare<br />An si Pret</html>", dimensiuneButon, toolTipAnPret);
+        JButton cautAnPret = InterfataGrafica.createButton("<html>Cautare<br />An si Pret</html>", dimensiuneButon, toolTipAnPret, AnMinPretMax);
         JButton cautBrandPret = InterfataGrafica.createButton("<html>Cautare<br />Brand si Pret</html>", dimensiuneButon, toolTipBrandPret);
 
         panou.add(initCarTruck);
