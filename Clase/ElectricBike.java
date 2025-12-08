@@ -18,4 +18,10 @@ public class ElectricBike extends Vehicle{
         this.accel0100=b.accel0100;
     }
 
+    @Override
+    public String toString()
+    {
+        return super.toString() + "\n" +
+        "Acceleratie 0-100: " + this.accel0100 + "\n\n";
+    }
 }

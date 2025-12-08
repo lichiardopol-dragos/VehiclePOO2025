@@ -36,7 +36,8 @@ public class Motorcycle extends Vehicle{
 public String toString(){
         return super.toString() +
                 "tip transmisie: "+ tipTransmisie+
-                "\ntip frana: "+tipFrana;
+                "\ntip frana: "+ tipFrana +
+                "\n\n";
 }
 
     //gettere si settere pentru cele 2 atribute private

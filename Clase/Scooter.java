@@ -38,7 +38,8 @@ public Scooter(int nrRoti, String culoare, String brand, int anLansare, int pret
 public String toString() {
         return super.toString() +
                 "has storage under seat: "+hasStorageUnderSeat+
-                "\ndimensiune roata: "+dimensiuneRoata;
+                "\ndimensiune roata: "+ dimensiuneRoata +
+                "\n\n";
 }
     //gettere si settere pentru cele doua atribute private
     public boolean isHasStorageUnderSeat(){

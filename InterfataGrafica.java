@@ -345,10 +345,10 @@ public class InterfataGrafica {
 
         JPanel panou = new JPanel();
         
-        GridLayout asezare = new GridLayout(3, 3, 100, 100);
+        GridLayout asezare = new GridLayout(3, 3, 70, 70);
         panou.setLayout(asezare);
 
-        Dimension dim = new Dimension(50, 50);
+        Dimension dim = new Dimension(100, 100);
 
         String tooltipCarTruck = "Initializeaza vectorul principal cu 10 obiecte de tip Car, respectiv 10 de tip Truck.";
         ActionListener CarTruck = new ActionListener() {
