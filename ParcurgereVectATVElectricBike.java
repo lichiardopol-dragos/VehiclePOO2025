@@ -136,14 +136,27 @@ public class ParcurgereVectATVElectricBike {
 
         MetArrayList.parcurgereVector(atvNelectricbike, "ATVs din vector:", "Electric Bikes din vector:");
 
-        //System.out.println("\tFiltru de cautare interval de pret si an vechime");
-        //System.out.println(MetArrayList.PretBunPentruAn(atvNelectricbike));
+        Scanner scn = new Scanner(System.in);
 
-        //System.out.println("\tFiltru de cautare dupa brand si cutie de viteze");
-        //System.out.println(MetArrayList.CautareDupaBrandSiCutieViteze(atvNelectricbike));
+        System.out.println("\tFiltru de cautare interval de pret si an vechime");
+        System.out.println("An minim: "); int anMin = scn.nextInt();
+        System.out.println("Pret maxim: "); int pretMax = scn.nextInt();
+        for (int i = 0; i<atvNelectricbike.size(); i++)
+            System.out.println(MetArrayList.PretBunPentruAn(atvNelectricbike, i, anMin, pretMax));
 
-        
-        
+        System.out.println("\tFiltru de cautare dupa brand si cutie de viteze");
+        System.out.println("Brand: "); String brand = scn.nextLine();
+        System.out.println("Cutie viteze: "); String cutievit = scn.nextLine();
+        for (int i = 0; i<atvNelectricbike.size(); i++)
+            System.out.println(MetArrayList.CautareDupaBrandSiCutieViteze(atvNelectricbike, i, brand, cutievit));
 
+        System.out.println("\tFiltru de cautare dupa brand si pret");
+        System.out.println("Brand: "); String brand2 = scn.nextLine();
+        System.out.println("Pret minim: "); int pretA = scn.nextInt();
+        System.out.println("Pret maxim: "); int pretB = scn.nextInt();
+        for (int i = 0; i<atvNelectricbike.size(); i++)
+            System.out.println(MetArrayList.CautareDupaBrandSiPret(atvNelectricbike, i, brand2, pretA, pretB));
+
+        scn.close();
     }
 }

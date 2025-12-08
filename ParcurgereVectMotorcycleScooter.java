@@ -163,14 +163,24 @@ public class ParcurgereVectMotorcycleScooter {
         motorcycleNscooter.add(s8);
         motorcycleNscooter.add(s9);
         motorcycleNscooter.add(s10);
+        
+        Scanner scn = new Scanner(System.in);
 
         MetArrayList.parcurgereVector(motorcycleNscooter, "Motorcycles din vector:", "Scooters din vector:");
 
         System.out.println("\tFiltru de cautare interval de pret si an vechime");
-        System.out.println(MetArrayList.PretBunPentruAn(motorcycleNscooter));
+        System.out.println("An minim: "); int anMin = scn.nextInt();
+        System.out.println("Pret maxim: "); int pretMax = scn.nextInt();
+        for (int i = 0; i<motorcycleNscooter.size(); i++)
+            System.out.println(MetArrayList.PretBunPentruAn(motorcycleNscooter, i, anMin, pretMax));
 
         System.out.println("\tFiltru de cautare dupa brand si cutie de viteze");
-        System.out.println(MetArrayList.CautareDupaBrandSiCutieViteze(motorcycleNscooter));
+        System.out.println("Brand: "); String brand = scn.nextLine();
+        System.out.println("Cutie viteze: "); String cutievit = scn.nextLine();
+        for (int i = 0; i<motorcycleNscooter.size(); i++)
+            System.out.println(MetArrayList.CautareDupaBrandSiCutieViteze(motorcycleNscooter, i, brand, cutievit));
+
+        scn.close();
 
     }
 }
