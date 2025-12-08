@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import Clase.*;
 import Clase_ajutatoare_metode.MetArrayList;
@@ -344,10 +345,10 @@ public class InterfataGrafica {
 
         JPanel panou = new JPanel();
         
-        GridLayout asezare = new GridLayout(2, 3, 100, 100);
+        GridLayout asezare = new GridLayout(3, 3, 100, 100);
         panou.setLayout(asezare);
 
-        Dimension dimensiuneButon = new Dimension(60, 20);
+        Dimension dim = new Dimension(50, 50);
 
         String tooltipCarTruck = "Initializeaza vectorul principal cu 10 obiecte de tip Car, respectiv 10 de tip Truck.";
         ActionListener CarTruck = new ActionListener() {
@@ -466,6 +467,7 @@ public class InterfataGrafica {
                 {
                     String brand = JOptionPane.showInputDialog("Brand: ");
                     String cutieViteze = JOptionPane.showInputDialog("Cutie de viteze: ");
+                    
                     int nrCur = 1;
 
                     for (int i=0; i<vectorPrincipal.size(); i++) {
@@ -588,12 +590,36 @@ public class InterfataGrafica {
             }
         };
 
-        JButton initCarTruck = InterfataGrafica.createButton("<html>Initializare<br />Car Truck</html>", dimensiuneButon, tooltipCarTruck, CarTruck);
-        JButton initMotorScooter = InterfataGrafica.createButton("<html>Initializare<br />Motorcycle Scooter</html>", dimensiuneButon, tooltipMotorScooter, MotorScooter);
-        JButton initAtvElectricBike = InterfataGrafica.createButton("<html>Initializare<br />ATV ElectricBike</html>", dimensiuneButon, tooltipAtvElectricBike, AtvElectricBike);
-        JButton cautBrandViteze = InterfataGrafica.createButton("<html>Cautare<br />Brand si Cutie Viteze</html>", dimensiuneButon, toolTipBrandViteze, BrandViteze);
-        JButton cautAnPret = InterfataGrafica.createButton("<html>Cautare<br />An si Pret</html>", dimensiuneButon, toolTipAnPret, AnMinPretMax);
-        JButton cautBrandPret = InterfataGrafica.createButton("<html>Cautare<br />Brand si Pret</html>", dimensiuneButon, toolTipBrandPret, BrandPret);
+        String toolTipScriereOb = "Scrie informatiile vehiculelor in functie de tip in 2 fisiere.";
+
+        ActionListener ScriereOb = new ActionListener() {
+            
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e){
+
+                if(!vectorPrincipal.isEmpty()){
+                    try{
+                        MetArrayList.ScriereVectInFisiere(vectorPrincipal);
+                    }
+                    catch (IOException e1){
+                        JOptionPane.showMessageDialog(null, "Scrierea vehiculelor in fisiere a esuat. Incercati din nou.");
+                    }
+                    JOptionPane.showMessageDialog(null, "Scrierea vehiculelor in fisiere s-a realizat cu succes.");
+                }
+                else
+                    JOptionPane.showMessageDialog(cadru, "Vectorul nu este initializat. Va rugam sa il initializati inainte de a efectua scrierea.");
+                
+                    
+            }
+        };
+
+        JButton initCarTruck = InterfataGrafica.createButton("<html>Initializare<br />Car Truck</html>", dim, tooltipCarTruck, CarTruck);
+        JButton initMotorScooter = InterfataGrafica.createButton("<html>Initializare<br />Motorcycle Scooter</html>", dim, tooltipMotorScooter, MotorScooter);
+        JButton initAtvElectricBike = InterfataGrafica.createButton("<html>Initializare<br />ATV ElectricBike</html>", dim, tooltipAtvElectricBike, AtvElectricBike);
+        JButton cautBrandViteze = InterfataGrafica.createButton("<html>Cautare<br />Brand si Cutie Viteze</html>", dim, toolTipBrandViteze, BrandViteze);
+        JButton cautAnPret = InterfataGrafica.createButton("<html>Cautare<br />An si Pret</html>", dim, toolTipAnPret, AnMinPretMax);
+        JButton cautBrandPret = InterfataGrafica.createButton("<html>Cautare<br />Brand si Pret</html>", dim, toolTipBrandPret, BrandPret);
+        JButton scriereObInFis = InterfataGrafica.createButton("<html>Scriere vehicule in fisier</html>", dim, toolTipScriereOb, ScriereOb);
 
         panou.add(initCarTruck);
         panou.add(initMotorScooter);
@@ -601,12 +627,13 @@ public class InterfataGrafica {
         panou.add(cautBrandViteze);
         panou.add(cautAnPret);
         panou.add(cautBrandPret);
+        panou.add(scriereObInFis);
         cadru.add(panou);
     }
 
-    public static JButton createButton(String name, Dimension dimensiune, String toolTip, ActionListener actiune) {
+    public static JButton createButton(String name, Dimension dim, String toolTip, ActionListener actiune) {
         JButton button = new JButton(name);
-        button.setPreferredSize(dimensiune);
+        button.setSize(dim);
         button.setFocusable(false);
         button.setToolTipText(toolTip);
         button.addActionListener(actiune);

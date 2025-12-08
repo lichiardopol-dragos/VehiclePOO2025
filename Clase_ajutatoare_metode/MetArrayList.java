@@ -1,5 +1,8 @@
 package Clase_ajutatoare_metode;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import Clase.ATV;
@@ -66,5 +69,41 @@ public class MetArrayList {
             return "Nu s-a gasit un vehicul care sa indeplineasca cerintele.";
         else return afisare;
     }
+
+    public static void ScriereVectInFisiere(ArrayList<Vehicle> v) throws IOException{
+        
+        FileWriter fw1 = new FileWriter("vehicule1.txt");
+        FileWriter fw2 = new FileWriter("vehicule2.txt");
+        BufferedWriter bw1 = new BufferedWriter(fw1);
+        BufferedWriter bw2 = new BufferedWriter(fw2);
+
+        try{
+            int i = 1;
+            for (Vehicle vehicul : v) {
+                if (vehicul instanceof Car || vehicul instanceof Motorcycle || vehicul instanceof ATV){
+                    bw1.write("Obiectul " + i + " :");
+                    bw1.newLine();
+                    bw1.write(vehicul.toString());
+                    bw1.newLine();
+                    i++;
+                }
+                else if (vehicul instanceof Truck || vehicul instanceof Scooter || vehicul instanceof ElectricBike){
+                    bw2.write("Obiectul " + i + " :");
+                    bw2.newLine();
+                    bw2.write(vehicul.toString());
+                    bw2.newLine();
+                    i++;
+                }
+            }
+
+            bw1.close();
+            bw2.close();
+        }
+
+        catch (IOException e){
+        }
+
+    }
+
 
 }
